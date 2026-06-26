@@ -64,7 +64,7 @@ No se detecta `package.json` en este proyecto, por lo que no hay scripts de desa
 
 Para revisar la web localmente:
 
-1. Abrir `magnotex_propuesta.html` directamente en el navegador.
+1. Abrir `index.html` directamente en el navegador.
 2. Revisar también `catalogo_magnotex.html` y `soluciones_magnotex.html` si se hacen cambios globales de estilo o navegación.
 3. Comprobar que las imágenes externas, logos, enlaces de contacto, redes sociales y mapa cargan correctamente.
 

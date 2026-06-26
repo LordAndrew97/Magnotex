@@ -6,7 +6,7 @@ base = Path('.')
 img_dir = base / 'assets' / 'images'
 img_dir.mkdir(exist_ok=True, parents=True)
 
-files = [base / 'magnotex_propuesta.html', base / 'soluciones_magnotex.html', base / 'catalogo_magnotex.html']
+files = [base / 'index.html', base / 'soluciones_magnotex.html', base / 'catalogo_magnotex.html']
 pattern = re.compile(r'https://edredonesmagnotex\.com/wp-content/uploads/[^\s)\'\"<>]+')
 
 for path in files:
