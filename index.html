@@ -300,7 +300,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
       <img class="light" id="logo-light" alt="Edredones Magnotex">
       <img class="dark"  id="logo-dark"  alt="Edredones Magnotex">
     </a>
-    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <ul class="nav" id="nav">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
@@ -620,12 +620,20 @@ const header=$("#header");
 addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>40));
 
 /* menú móvil */
-const burger=$("#burger"),nav=$("#nav");
-burger.addEventListener("click",()=>nav.classList.toggle("open"));
-document.querySelector(".has-sub>a").addEventListener("click",e=>{
-  if(innerWidth<=780){e.preventDefault();e.target.closest(".has-sub").classList.toggle("open");}});
+const burger=$("#burger"),nav=$("#nav"),productsToggle=document.querySelector(".has-sub>a");
+const setMenuOpen=open=>{
+  nav.classList.toggle("open",open);
+  burger.setAttribute("aria-expanded",String(open));
+};
+burger.addEventListener("click",()=>setMenuOpen(!nav.classList.contains("open")));
+productsToggle.addEventListener("click",e=>{
+  if(innerWidth<=780){e.preventDefault();e.currentTarget.closest(".has-sub").classList.toggle("open");}});
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-  if(innerWidth<=780 && !a.closest(".has-sub")) nav.classList.remove("open");}));
+  if(innerWidth>780) return;
+  const parentSub=a.closest(".has-sub");
+  if(parentSub && a.parentElement===parentSub) return;
+  setMenuOpen(false);
+}));
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{
