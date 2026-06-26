@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edredones Magnotex · Lencería de cama para hotelería</title>
+<meta name="description" content="La casa de lencería de cama que viste los hoteles del Ecuador. 21 años de fabricación especializada y más de 900 hoteles que confían en nosotros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   PALETA — intencional. Los valores reales de marca se afinan extrayendo
+   colores del logo con tu método PIL. Esta es la dirección propuesta.
+   ===================================================================== */
+:root{
+  --suite:#15292E;        /* verde-pizarra profundo (superficie de marca) */
+  --suite-2:#1d3940;
+  --linen:#F5F1E9;        /* lino cálido (contenido) */
+  --cloud:#FCFBF8;        /* blanco hueso */
+  --brass:#B8915A;        /* latón (acento) */
+  --brass-d:#9c7740;
+  --sage:#8FA396;         /* salvia (frescura) */
+  --ink:#1c2b2e;
+  --muted:#4f5f60;
+  --soft-ink:#354648;
+  --line:#e3ddd0;
+  --line-strong:#d3cab9;
+  --line-dark:rgba(255,255,255,.14);
+  --maxw:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Manrope",Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--linen);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.sec{padding:clamp(84px,9vw,132px) 0}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.08;
+  letter-spacing:-.015em;font-optical-sizing:auto}
+.eyebrow{font-family:"Manrope",Inter,system-ui,sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-d);display:inline-flex;align-items:center;gap:10px}
+
+.eyebrow.center{justify-content:center}
+.title{font-size:clamp(2rem,4.4vw,3.3rem);color:var(--suite)}
+.title em{font-style:italic;color:var(--brass-d)}
+.kicker{color:var(--muted);font-size:1.06rem;line-height:1.75;max-width:580px}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:"Manrope",Inter,system-ui,sans-serif;font-weight:800;
+  font-size:.92rem;letter-spacing:.02em;padding:15px 30px;border-radius:2px;cursor:pointer;
+  border:1px solid transparent;transition:.28s ease}
+.btn-brass{background:var(--brass);color:#fff}
+.btn-brass:hover{background:var(--brass-d);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-ghost:hover{background:#fff;color:var(--suite);border-color:#fff}
+.btn-dark{background:var(--suite);color:#fff}
+.btn-dark:hover{background:var(--suite-2);transform:translateY(-2px)}
+
+/* ===================== HEADER ===================== */
+header{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s ease}
+.hbar{display:flex;align-items:center;justify-content:space-between;height:84px}
+.brand{position:relative;display:block;height:48px}
+.brand img{height:48px;width:auto;transition:opacity .3s}
+.brand .dark{position:absolute;top:0;left:0;opacity:0}
+header.scrolled{background:var(--cloud);box-shadow:0 1px 0 var(--line),0 10px 30px rgba(21,41,46,.06)}
+header.scrolled .hbar{height:70px}
+header.scrolled .brand,header.scrolled .brand img{height:42px}
+header.scrolled .brand .light{opacity:0}
+header.scrolled .brand .dark{opacity:1}
+.nav{display:flex;align-items:center;gap:30px;list-style:none}
+.nav>li{position:relative}
+.nav a{font-family:"Manrope",Inter,system-ui,sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:6px 0;
+  transition:color .2s}
+header.scrolled .nav a{color:var(--ink)}
+.nav a:hover{color:var(--brass)}
+header.scrolled .nav a:hover{color:var(--brass-d)}
+.has-sub>a::after{content:"";display:inline-block;width:5px;height:5px;margin-left:7px;
+  border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translateY(-2px)}
+.sub{position:absolute;top:140%;left:50%;transform:translateX(-50%) translateY(8px);
+  background:var(--cloud);border:1px solid var(--line);border-radius:6px;padding:10px;
+  min-width:240px;list-style:none;opacity:0;visibility:hidden;transition:.25s;
+  box-shadow:0 24px 50px rgba(21,41,46,.16);columns:1}
+.has-sub:hover .sub{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.sub a{display:block;padding:9px 14px;border-radius:4px;color:var(--ink)!important;font-weight:500;
+  font-size:.88rem}
+.sub a:hover{background:var(--linen);color:var(--brass-d)!important}
+.cta-pill{border:1px solid var(--brass);color:var(--brass)!important;padding:9px 20px!important;
+  border-radius:2px;font-weight:700!important}
+header.scrolled .cta-pill{color:var(--brass-d)!important}
+.cta-pill:hover{background:var(--brass);color:#fff!important}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:70}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s}
+header.scrolled .burger span{background:var(--ink)}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;
+  padding:120px 0 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://edredonesmagnotex.com/wp-content/uploads/2023/08/edredones-04.jpg') center/cover no-repeat;
+  transform:scale(1.08);animation:slowzoom 18s ease-in-out infinite alternate;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(105deg,rgba(14,33,38,.94) 0%,rgba(21,41,46,.8) 48%,rgba(21,41,46,.58) 100%)}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero-inner{max-width:760px}
+.hero .eyebrow{color:var(--brass)}
+.hero .eyebrow::before{background:var(--brass)}
+.hero h1{color:var(--cloud);font-size:clamp(2.6rem,6.2vw,5rem);margin:22px 0 6px;font-weight:300}
+.hero .promesa{font-family:"Fraunces";font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);
+  color:#d4ad72;font-weight:400;display:block;margin-bottom:24px}
+.hero p{color:#eef3f0;font-size:1.1rem;line-height:1.75;max-width:580px;margin-bottom:36px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.scrolldown{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:#cdd8d4;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;text-align:center}
+.scrolldown span{display:block;width:1px;height:42px;background:linear-gradient(var(--brass),transparent);
+  margin:12px auto 0}
+
+/* ===================== INTRO + CIFRAS ===================== */
+.intro{background:var(--cloud)}
+.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.intro h2{font-size:clamp(1.7rem,3.4vw,2.6rem);color:var(--suite)}
+.figs{display:flex;gap:0;border-top:1px solid var(--line);margin-top:8px}
+.fig{flex:1;padding:26px 18px 0}
+.fig:not(:last-child){border-right:1px solid var(--line)}
+.fig b{font-family:"Fraunces";font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--brass-d);
+  font-weight:400;display:block;line-height:1}
+.fig small{font-size:.82rem;color:var(--muted);letter-spacing:.04em;display:block;margin-top:8px}
+
+/* ===================== MARQUEE (firma) ===================== */
+.trust{background:var(--cloud);padding-bottom:clamp(84px,9vw,120px)}
+.trust .lead{text-align:center;margin-bottom:42px}
+.marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;align-items:center;gap:54px;width:max-content;animation:scroll 95s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.track img{height:50px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;transition:.3s}
+.track img:hover{filter:grayscale(0);opacity:1;transform:scale(1.05)}
+
+/* ===================== NOSOTROS ===================== */
+.about{background:var(--linen)}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(48px,6vw,78px);align-items:center}
+.about-img{position:relative}
+.about-img img{border-radius:4px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about-img::after{content:"";position:absolute;inset:-16px -16px 16px 16px;border:1px solid var(--brass);
+  border-radius:4px;z-index:-1}
+.about h2{font-size:clamp(1.9rem,3.8vw,2.9rem);color:var(--suite);margin:20px 0 22px}
+.about p{color:var(--soft-ink);margin-bottom:18px;font-size:1.06rem;line-height:1.75}
+
+/* ===================== PRODUCTOS ===================== */
+.prod{background:var(--cloud)}
+.prod-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  margin-bottom:50px;flex-wrap:wrap}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tile{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;background:var(--linen)}
+.tile .img{aspect-ratio:4/5;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.tile:hover img{transform:scale(1.07)}
+.tile::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(transparent 34%,rgba(14,33,38,.9));opacity:.9;transition:.3s}
+.tile:hover::after{opacity:1}
+.tile .cap{position:absolute;left:20px;right:20px;bottom:18px;z-index:2;color:#fff}
+.tile .cap h3{font-size:1.18rem;font-weight:400}
+.tile .cap em{font-style:normal;font-family:"Manrope",Inter,system-ui,sans-serif;font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brass);opacity:0;transform:translateY(8px);
+  display:inline-block;transition:.3s;margin-top:4px}
+.tile:hover .cap em{opacity:1;transform:none}
+
+/* ===================== PROCESO ===================== */
+.process-grid{grid-template-columns:repeat(4,1fr);gap:20px}
+.process-card{min-height:178px;padding:30px 26px;border:1px solid var(--line-strong);border-radius:8px;
+  background:var(--linen);box-shadow:0 12px 30px rgba(21,41,46,.06)}
+.process-card h3{font-size:1.22rem;color:var(--suite);margin-bottom:12px}
+.process-card em{display:block;font-style:normal;font-family:"Manrope",Inter,system-ui,sans-serif;
+  font-size:.82rem;font-weight:700;letter-spacing:.08em;line-height:1.55;text-transform:uppercase;color:var(--muted)}
+
+/* ===================== VALOR ===================== */
+.value{background:var(--suite);color:#e7ede9}
+.value .title{color:#fff}
+.value .eyebrow{color:var(--brass)}.value .eyebrow::before{background:var(--brass)}
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:54px}
+.val{padding:30px 28px;border-top:1px solid var(--line-dark)}
+.val:not(:last-child){border-right:1px solid var(--line-dark)}
+.val h3{font-size:1.3rem;color:#fff;margin-bottom:12px;font-weight:400}
+.val p{font-size:.96rem;color:#b6c3bf;line-height:1.6}
+.intro .val,.about .val{border-color:var(--line-strong)}
+.intro .val:not(:last-child),.about .val:not(:last-child){border-right-color:var(--line-strong)}
+.intro .val h3,.about .val h3{color:var(--suite)}
+.intro .val p,.about .val p{color:var(--muted)}
+
+/* ===================== SOLUCIONES ===================== */
+.solutions-grid{align-items:start}
+.solutions-copy{max-width:560px}
+.solutions-copy h2{margin:18px 0 22px}
+.solutions-copy p{max-width:520px}
+.solution-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:10px}
+.solution-card{min-height:178px;padding:30px 28px;border:1px solid var(--line-strong);border-radius:8px;
+  background:var(--cloud);box-shadow:0 14px 34px rgba(21,41,46,.07)}
+.solution-card h3{font-size:1.22rem;color:var(--suite);margin-bottom:14px}
+.solution-card p{font-size:.96rem;color:var(--soft-ink);line-height:1.65;margin:0}
+
+/* ===================== LIGHT CARDS ===================== */
+.light-card-grid .val{background:rgba(252,251,248,.72);border-color:var(--line-strong)}
+.light-card-grid .val:not(:last-child){border-right-color:var(--line-strong)}
+.light-card-grid .val h3{color:var(--suite)}
+.light-card-grid .val p{color:var(--muted)}
+
+/* ===================== MAPA ===================== */
+.map-sec{background:var(--cloud)}
+.map-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
+.map-card{background:var(--cloud);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(21,41,46,.08)}
+.map-frame{width:100%;height:340px;border:0;display:block}
+.map-copy p{color:var(--muted);margin-top:10px;font-size:1rem}
+.map-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+
+/* ===================== CTA ===================== */
+.cta{position:relative;color:#fff;text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0;z-index:-2;background:url('https://edredonesmagnotex.com/wp-content/uploads/2023/08/colchas-02.jpg') center/cover}
+.cta::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,33,38,.9)}
+.cta h2{font-size:clamp(2rem,4.4vw,3.2rem);color:#fff;max-width:740px;margin:18px auto 0}
+.cta p{color:#eef3f0;margin:18px auto 34px;max-width:560px;font-size:1.08rem;line-height:1.75}
+.cta-phones{margin-top:26px;font-size:.95rem;color:#d9e2df}
+.cta-phones a{color:#fff;font-weight:700}
+
+/* ===================== FOOTER ===================== */
+footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:48px}
+.foot .flogo{height:56px;margin-bottom:20px}
+.foot p{font-size:.92rem;color:#8ea09c;line-height:1.75;max-width:330px}
+.foot h4{color:#fff;font-family:"Fraunces";font-weight:400;font-size:1.15rem;margin-bottom:18px}
+.flist{list-style:none;columns:2;column-gap:18px}
+.flist li{margin-bottom:9px;font-size:.9rem}
+.flist a:hover{color:var(--brass)}
+.fc div{margin-bottom:15px}
+.fc span{display:block;color:var(--brass);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:4px}
+.fc a:hover,.fc .v{color:#dfe7e4}
+.pay{margin-top:6px}
+.pay img{height:34px;margin-top:10px;opacity:.9}
+.copy{border-top:1px solid var(--line-dark);margin-top:54px;padding:24px 0;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:#6f817d}
+.copy a{color:#9fb0ad}.copy a:hover{color:var(--brass)}
+
+/* ===================== WHATSAPP ===================== */
+.wa{position:fixed;right:24px;bottom:24px;z-index:80;width:58px;height:58px;border-radius:50%;
+  background:#25d366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px rgba(37,211,102,.4);transition:.25s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* ===================== REVEAL ===================== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:980px){
+  .intro-grid,.about-grid{grid-template-columns:1fr;gap:42px}
+  .about-img{order:-1;max-width:440px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .val-grid{grid-template-columns:1fr 1fr}
+  .val{border-right:0}.val:nth-child(odd){border-right:1px solid var(--line-dark)}
+  .intro .val:nth-child(odd),.about .val:nth-child(odd){border-right-color:var(--line-strong)}
+  .foot{grid-template-columns:1fr;gap:38px}
+}
+@media(max-width:780px){
+  .wrap{padding:0 22px}
+  .burger{display:flex}
+  .nav{position:fixed;inset:0 0 0 auto;width:min(320px,82vw);background:var(--cloud);
+    flex-direction:column;align-items:flex-start;gap:0;padding:100px 26px 40px;
+    transform:translateX(110%);transition:.35s ease;box-shadow:-20px 0 60px rgba(0,0,0,.2);overflow-y:auto}
+  .nav.open{transform:none}
+  .nav a{color:var(--ink)!important;width:100%;padding:14px 0;font-size:1rem}
+  .nav>li{width:100%;border-bottom:1px solid var(--line)}
+  .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;
+    padding:0 0 8px 14px;min-width:0;display:none}
+  .has-sub.open .sub{display:block}
+  .cta-pill{border:0!important;padding:14px 0!important}
+  .figs{flex-wrap:wrap}.fig{flex:1 1 40%;border-right:0!important;border-top:1px solid var(--line)}
+  .solution-cards{gap:16px}
+  .solution-card{min-height:160px;padding:26px 24px}
+}
+@media(max-width:560px){.solution-cards{grid-template-columns:1fr}}
+@media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.prod-grid,.process-grid{grid-template-columns:1fr}.val-grid{grid-template-columns:1fr}
+  .hero{padding:112px 0 76px}.hero h1{font-size:clamp(2.35rem,13vw,3.4rem)}
+  .hero-cta .btn,.map-links .btn{width:100%;justify-content:center}
+  .val{border-right:0!important}.solution-card{padding:24px 22px}}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-bg{animation:none}.track{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header id="header">
+  <div class="wrap hbar">
+    <a class="brand" href="#inicio">
+      <img class="light" id="logo-light" alt="Edredones Magnotex">
+      <img class="dark"  id="logo-dark"  alt="Edredones Magnotex">
+    </a>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+    <ul class="nav" id="nav">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li class="has-sub"><a href="#productos">Productos</a><ul class="sub" id="sub"></ul></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="soluciones_magnotex.html">Soluciones</a></li>
+      <li><a href="catalogo_magnotex.html">Catálogo</a></li>
+      <li><a href="#contacto" class="cta-pill">Cotizar</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Lencería de cama para hotelería · desde 2003</span>
+      <h1>Vestimos las camas<br>donde el Ecuador descansa.</h1>
+      <span class="promesa">Su satisfacción al dormir.</span>
+      <p>Fabricamos y comercializamos lencería de cama y baño para hoteles, resorts, hostales, apartamentos y cadenas. También tenemos línea hogar para quienes buscan confort y estilo en casa. Calidad sólida, buen acabado y entregas confiables.</p>
+      <div class="hero-cta">
+        <a href="#productos" class="btn btn-brass">Ver nuestra línea</a>
+        <a href="#contacto" class="btn btn-ghost">Solicitar cotización</a>
+      </div>
+    </div>
+  </div>
+  <div class="scrolldown">Descubra<span></span></div>
+</section>
+
+<!-- ===================== INTRO + CIFRAS ===================== -->
+<section class="intro sec">
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2 style="margin-top:18px">Hechos para la exigencia<br>de la hotelería.</h2>
+    </div>
+    <div class="reveal">
+      <p class="kicker">Desde hace dos décadas producimos lencería de cama pensada para el uso intensivo de los hoteles, con la calidad que cada huésped espera sentir al recostarse.</p>
+      <div class="figs">
+        <div class="fig"><b>21</b><small>Años de trayectoria</small></div>
+        <div class="fig"><b>+900</b><small>Hoteles atendidos</small></div>
+        <div class="fig"><b>Nacional</b><small>Cobertura en todo el país</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE (firma) ===================== -->
+<section class="trust" id="clientes">
+  <div class="wrap">
+    <div class="lead reveal">
+      <span class="eyebrow center">Clientes y hoteles que confían en nosotros</span>
+      <p class="kicker" style="margin:16px auto 0;max-width:720px">Hemos trabajado con más de 900 hoteles en todo el país en nuestros 21 años de trayectoria, respaldando la operación hotelera con lencería de cama y baño de calidad.</p>
+    </div>
+  </div>
+  <div class="marquee"><div class="track" id="track"></div></div>
+</section>
+
+<!-- ===================== NOSOTROS ===================== -->
+<section class="about sec" id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-img reveal">
+      <img src="https://edredonesmagnotex.com/wp-content/uploads/2023/08/sabanas-05.jpg" alt="Lencería de cama Magnotex">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Edredones Magnotex</span>
+      <h2>Calidad que se siente,<br>lavado tras lavado.</h2>
+      <p>Somos una empresa ecuatoriana dedicada a la producción y comercialización de lencería de cama para el mercado hotelero. Fabricamos de forma especializada edredones, colchas, duvets, fundas, sábanas, almohadas, protectores, toallas, salidas de baño, faldones y mantelería.</p>
+      <p>Cada pieza se elabora con procesos y materiales escogidos para resistir el ritmo de un hotel, sin perder la suavidad y la presentación que distinguen a una buena habitación.</p>
+      <a href="#productos" class="btn btn-dark" style="margin-top:8px">Conocer la línea</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTOS ===================== -->
+<section class="prod sec" id="productos">
+  <div class="wrap">
+    <div class="prod-head">
+      <div class="reveal">
+        <span class="eyebrow">Catálogo</span>
+        <h2 class="title" style="margin-top:16px">Nuestra línea de productos</h2>
+      </div>
+      <p class="kicker reveal" style="max-width:340px">Productos para camas, baños y áreas comunes de su hotel.</p>
+    </div>
+    <div class="prod-grid reveal" id="prod-grid"></div>
+  </div>
+</section>
+
+<!-- ===================== SOLUCIONES POR SEGMENTO ===================== -->
+<section class="about sec" id="soluciones">
+  <div class="wrap about-grid solutions-grid">
+    <div class="reveal solutions-copy">
+      <span class="eyebrow">Soluciones para hoteles</span>
+      <h2>Soluciones para distintos tipos de hoteles.</h2>
+      <p>Atendemos hoteles boutique, resorts, hostales, apartamentos y cadenas con líneas pensadas para el uso diario.</p>
+      <p>Te ayudamos con la selección de productos, cantidades y detalles para que el pedido sea claro y fácil de ordenar.</p>
+    </div>
+    <div class="reveal">
+      <div class="solution-cards">
+        <div class="solution-card"><h3>Hoteles boutique</h3><p>Un look cuidado y piezas que se ven bien en habitaciones pequeñas o de estilo más refinado.</p></div>
+        <div class="solution-card"><h3>Hostales y negocios turísticos</h3><p>Productos resistentes y prácticos para mucho uso diario.</p></div>
+        <div class="solution-card"><h3>Resorts y cadenas</h3><p>Volúmenes, consistencia y buena disponibilidad para operaciones más grandes.</p></div>
+        <div class="solution-card"><h3>Departamentos y apartamentos</h3><p>Opciones sencillas, confortables y fáciles de mantener.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESO ===================== -->
+<section class="prod sec">
+  <div class="wrap">
+    <div class="prod-head reveal">
+      <div>
+        <span class="eyebrow">Proceso</span>
+        <h2 class="title" style="margin-top:16px">Cómo trabajamos</h2>
+      </div>
+      <p class="kicker" style="max-width:380px">Un proceso simple: escuchar, recomendar, cotizar y entregar.</p>
+    </div>
+    <div class="prod-grid process-grid reveal">
+      <article class="process-card"><div><h3>1. Diagnóstico</h3><em>Revisión de habitaciones, uso y requerimientos</em></div></article>
+      <article class="process-card"><div><h3>2. Selección</h3><em>Productos, cantidades y detalles por habitación</em></div></article>
+      <article class="process-card"><div><h3>3. Cotización</h3><em>Precio claro, tiempos y condiciones comerciales</em></div></article>
+      <article class="process-card"><div><h3>4. Entrega</h3><em>Logística y acompañamiento postventa</em></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VALOR ===================== -->
+<section class="value sec">
+  <div class="wrap">
+    <div class="reveal" style="max-width:680px">
+      <span class="eyebrow">Por qué Magnotex</span>
+      <h2 class="title" style="margin-top:16px">Un proveedor, no solo un producto.</h2>
+    </div>
+    <div class="val-grid reveal">
+      <div class="val"><h3>Fabricación<br>especializada</h3><p>Producimos piezas pensadas para uso hotelero y para resistir lavados frecuentes.</p></div>
+      <div class="val"><h3>Calidad<br>hotelera</h3><p>Buenas telas, buenos acabados y una presentación que se nota en la habitación.</p></div>
+      <div class="val"><h3>Cobertura<br>nacional</h3><p>Atendemos hoteles en todo el país con experiencia de muchos años.</p></div>
+      <div class="val"><h3>Asesoramiento<br>cercano</h3><p>Le ayudamos a definir lo que mejor se ajusta a su operación.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICIOS ===================== -->
+<section class="intro sec" id="servicios">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:28px">
+      <span class="eyebrow">Servicios</span>
+      <h2 class="title" style="margin-top:16px">Lo que ofrecemos para una operación hotelera completa</h2>
+    </div>
+    <div class="val-grid reveal light-card-grid">
+      <div class="val"><h3>Fabricación<br>especializada</h3><p>Producción orientada al uso diario del sector hotelero, con buena resistencia y buen acabado.</p></div>
+      <div class="val"><h3>Líneas por<br>segmento</h3><p>Opciones para hoteles boutique, resorts, hostales y cadenas según el tipo de operación.</p></div>
+      <div class="val"><h3>Asesoría y<br>cotización</h3><p>Recomendamos productos y cantidades de forma clara para facilitar la compra.</p></div>
+      <div class="val"><h3>Entrega y<br>soporte</h3><p>Seguimiento para que el abastecimiento sea ordenado y sin complicaciones.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAPA ===================== -->
+<section class="map-sec sec" id="mapa">
+  <div class="wrap map-grid">
+    <div class="reveal map-copy">
+      <span class="eyebrow">Cómo llegar</span>
+      <h2 class="title" style="margin-top:14px">Visítanos en nuestra ubicación.</h2>
+      <p>Estamos ubicados en Calle Río Malacatos y Río Napo, a 7 cuadras de la bomba Petroecuador.</p>
+      <div class="map-links">
+        <a href="https://maps.app.goo.gl/gGfJaS8s1RJJS31W7" target="_blank" rel="noopener" class="btn btn-dark">Abrir ruta en Google Maps</a>
+      </div>
+    </div>
+    <div class="reveal map-card">
+      <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Calle%20R%C3%ADo%20Malacatos%20y%20R%C3%ADo%20Napo%20Amagua%C3%B1a&z=15&output=embed" allowfullscreen title="Mapa de Magnotex"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta sec" id="cta">
+  <div class="cta-bg"></div>
+  <div class="wrap">
+    <span class="eyebrow center" style="color:var(--brass)">Hablemos</span>
+    <h2>¿Listo para vestir las camas de su hotel o su hogar?</h2>
+    <p>Llámenos, escríbanos o visítenos. También puede preguntar por nuestra línea hogar para soluciones de confort y diseño en espacios residenciales.</p>
+    <a href="#contacto" class="btn btn-brass">Contáctenos</a>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px">
+      <a href="https://wa.me/593991570939" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">WhatsApp</a>
+      <a href="https://www.instagram.com/magnotex/" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Instagram</a>
+      <a href="https://www.facebook.com/www.edredonesmagnotex.ec" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Facebook</a>
+    </div>
+    <div class="cta-phones">o llame ahora: <a id="cta-of" href="#"></a></div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="contacto">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img class="flogo" id="logo-foot" alt="Edredones Magnotex">
+        <p id="foot-about"></p>
+        <div class="pay"><span style="color:var(--brass);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase">Aceptamos todas las tarjetas</span>
+          <img id="tarjetas" alt="Tarjetas de crédito y débito"></div>
+      </div>
+      <div>
+        <h4>Productos</h4>
+        <ul class="flist" id="foot-prod"></ul>
+      </div>
+      <div class="fc">
+        <h4>Contáctanos</h4>
+        <div><span>Oficina</span><a id="f-of" href="#"></a></div>
+        <div><span>Celular</span><span class="v" id="f-cel"></span></div>
+        <div><span>Correo</span><a id="f-mail" href="#"></a></div>
+        <div><span>Dirección</span><span class="v" id="f-dir"></span></div>
+        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
+          <a href="https://wa.me/593991570939" target="_blank" rel="noopener" class="btn btn-brass" style="padding:10px 14px;font-size:.82rem">WhatsApp</a>
+          <a href="https://www.instagram.com/magnotex/" target="_blank" rel="noopener" class="btn btn-dark" style="padding:10px 14px;font-size:.82rem">Instagram</a>
+          <a href="https://www.facebook.com/www.edredonesmagnotex.ec" target="_blank" rel="noopener" class="btn btn-dark" style="padding:10px 14px;font-size:.82rem">Facebook</a>
+          <a href="#mapa" class="btn btn-dark" style="padding:10px 14px;font-size:.82rem">Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year"></span> Edredones Magnotex · Todos los derechos reservados.</span>
+      <span id="dev"></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+/* =====================================================================
+   CONFIG — todos los datos editables del negocio en un solo lugar.
+   ===================================================================== */
+const UP="https://edredonesmagnotex.com/wp-content/uploads/";
+
+const CONFIG={
+  logoLight: UP+"2023/09/logotipo-blanco.png",  /* sobre fondos oscuros */
+  logoDark:  UP+"2023/09/logotipo.png",          /* sobre fondos claros  */
+  tarjetas:  UP+"2023/05/tarjetas-de-credito.png",
+
+  aboutCorto:"Lencería de cama para el mercado hotelero ecuatoriano. 21 años de fabricación especializada y los más altos estándares de calidad.",
+
+  contacto:{
+    oficina:"(02) 3805 794", oficinaTel:"023805794",
+    celulares:"(099) 1570 939  ·  (098) 1098 185",
+    correo:"magnotex_ventas@hotmail.com",
+    direccion:"Calle Río Malacatos y Río Napo, a 7 cuadras de la bomba Petroecuador.",
+    whatsapp:"593991570939"
+  },
+  desarrolladoPor:"Desarrollado por HUMA Digital Studio",
+
+  productos:[
+    {n:"Almohadas",            img:UP+"2023/08/almohadas-02.jpg"},
+    {n:"Colchas",              img:UP+"2023/08/colchas-02.jpg"},
+    {n:"Duvet",                img:UP+"2023/08/duvet-01.jpg"},
+    {n:"Fundas de duvet",      img:UP+"2023/08/fundas-duvet-11.jpg"},
+    {n:"Edredones",            img:UP+"2023/08/edredones-04.jpg"},
+    {n:"Protector de colchón", img:UP+"2023/08/protector-de-duvet-01.jpg"},
+    {n:"Protector de almohada",img:UP+"2023/08/protector-de-almohada-01.jpg"},
+    {n:"Toallas",              img:UP+"2023/08/toallas-01.jpg"},
+    {n:"Sábanas",              img:UP+"2023/08/sabanas-05.jpg"},
+    {n:"Salidas de baño",      img:UP+"2023/08/salidas-de-bano-05.jpg"},
+    {n:"Faldones",             img:UP+"2023/08/faldones-04.jpg"},
+    {n:"Cobija térmica",       img:UP+"2023/08/cobijas-termicas-06.jpg"},
+    {n:"Mantelería",           img:UP+"2023/08/manteleria-04.jpg"},
+    {n:"Alfombras de baño",    img:UP+"2023/08/alfombra-de-bano-01.jpg"}
+  ],
+  clientes:["08/35","05/18","05/19","08/27","08/44","05/10","05/09","05/08","05/15","05/16",
+    "05/06","05/11","05/17","05/12","05/13","05/24","05/20","05/22","05/26","08/28","05/02",
+    "08/30","08/31","05/25","08/33","08/32","08/34","08/36","08/37","08/38","08/39","08/40",
+    "08/29","08/41","08/42","08/43","08/45","08/46","08/47","08/48","08/49","08/50","08/51",
+    "08/52","08/53","08/54","08/55","08/56","08/57","08/58","08/59","08/60","08/61","08/63",
+    "08/64","08/65","08/66","08/67","08/68","08/69","08/70","08/71","08/72","08/73"]
+};
+
+const $=s=>document.querySelector(s);
+$("#logo-light").src=CONFIG.logoLight;
+$("#logo-dark").src=CONFIG.logoDark;
+$("#logo-foot").src=CONFIG.logoLight;
+$("#tarjetas").src=CONFIG.tarjetas;
+$("#foot-about").textContent=CONFIG.aboutCorto;
+$("#year").textContent=new Date().getFullYear();
+$("#dev").textContent=CONFIG.desarrolladoPor;
+
+const c=CONFIG.contacto;
+$("#f-of").textContent=c.oficina; $("#f-of").href="tel:"+c.oficinaTel;
+$("#cta-of").textContent=c.oficina; $("#cta-of").href="tel:"+c.oficinaTel;
+$("#f-cel").textContent=c.celulares;
+$("#f-mail").textContent=c.correo; $("#f-mail").href="mailto:"+c.correo;
+$("#f-dir").textContent=c.direccion;
+$("#wa").href="https://wa.me/"+c.whatsapp+"?text="+encodeURIComponent("Hola, me interesan los productos de Edredones Magnotex para mi hotel.");
+
+/* productos */
+const grid=$("#prod-grid"),sub=$("#sub"),fprod=$("#foot-prod");
+CONFIG.productos.forEach(p=>{
+  const a=document.createElement("a"); a.className="tile"; a.href="#contacto";
+  a.innerHTML=`<div class="img"><img loading="lazy" src="${p.img}" alt="${p.n}"></div>
+    <div class="cap"><h3>${p.n}</h3><em>Consultar</em></div>`;
+  grid.appendChild(a);
+  sub.insertAdjacentHTML("beforeend",`<li><a href="#productos">${p.n}</a></li>`);
+  fprod.insertAdjacentHTML("beforeend",`<li><a href="#productos">${p.n}</a></li>`);
+});
+
+/* marquee — logos duplicados para loop continuo */
+const track=$("#track");
+const logoHTML=CONFIG.clientes.map(x=>{const[m,n]=x.split("/");
+  return `<img loading="lazy" src="${UP}2023/${m}/clientes-${n}.png" alt="Hotel cliente">`;}).join("");
+track.innerHTML=logoHTML+logoHTML;
+
+/* header scroll */
+const header=$("#header");
+addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>40));
+
+/* menú móvil */
+const burger=$("#burger"),nav=$("#nav");
+burger.addEventListener("click",()=>nav.classList.toggle("open"));
+document.querySelector(".has-sub>a").addEventListener("click",e=>{
+  if(innerWidth<=780){e.preventDefault();e.target.closest(".has-sub").classList.toggle("open");}});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  if(innerWidth<=780 && !a.closest(".has-sub")) nav.classList.remove("open");}));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
