@@ -152,6 +152,7 @@ header.scrolled .burger span{background:var(--ink)}
 .prod-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
   margin-bottom:50px;flex-wrap:wrap}
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod-action{display:flex;justify-content:center;margin-top:34px}
 .tile{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;background:var(--linen)}
 .tile .img{aspect-ratio:4/5;overflow:hidden}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
@@ -283,7 +284,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 @media(max-width:560px){.solution-cards{grid-template-columns:1fr}}
 @media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.prod-grid,.process-grid{grid-template-columns:1fr}.val-grid{grid-template-columns:1fr}
   .hero{padding:112px 0 76px}.hero h1{font-size:clamp(2.35rem,13vw,3.4rem)}
-  .hero-cta .btn,.map-links .btn{width:100%;justify-content:center}
+  .hero-cta .btn,.map-links .btn,.prod-action .btn{width:100%;justify-content:center}
   .val{border-right:0!important}.solution-card{padding:24px 22px}}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
@@ -388,6 +389,9 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
       <p class="kicker reveal" style="max-width:340px">Productos para camas, baños y áreas comunes de su hotel.</p>
     </div>
     <div class="prod-grid reveal" id="prod-grid"></div>
+    <div class="prod-action reveal">
+      <a href="catalogo_magnotex.html" class="btn btn-dark">Ver cat&aacute;logo completo</a>
+    </div>
   </div>
 </section>
 
@@ -535,6 +539,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
 </a>
 
+<script src="assets/productos-magnotex.js"></script>
 <script>
 /* =====================================================================
    CONFIG — todos los datos editables del negocio en un solo lugar.
@@ -556,23 +561,6 @@ const CONFIG={
     whatsapp:"593991570939"
   },
   desarrolladoPor:"Desarrollado por HUMA Digital Studio",
-
-  productos:[
-    {n:"Almohadas",            img:UP+"2023/08/almohadas-02.jpg"},
-    {n:"Colchas",              img:UP+"2023/08/colchas-02.jpg"},
-    {n:"Duvet",                img:UP+"2023/08/duvet-01.jpg"},
-    {n:"Fundas de duvet",      img:UP+"2023/08/fundas-duvet-11.jpg"},
-    {n:"Edredones",            img:UP+"2023/08/edredones-04.jpg"},
-    {n:"Protector de colchón", img:UP+"2023/08/protector-de-duvet-01.jpg"},
-    {n:"Protector de almohada",img:UP+"2023/08/protector-de-almohada-01.jpg"},
-    {n:"Toallas",              img:UP+"2023/08/toallas-01.jpg"},
-    {n:"Sábanas",              img:"assets/magnotex_cama_1200x737.png"},
-    {n:"Salidas de baño",      img:UP+"2023/08/salidas-de-bano-05.jpg"},
-    {n:"Faldones",             img:UP+"2023/08/faldones-04.jpg"},
-    {n:"Cobija térmica",       img:UP+"2023/08/cobijas-termicas-06.jpg"},
-    {n:"Mantelería",           img:UP+"2023/08/manteleria-04.jpg"},
-    {n:"Alfombras de baño",    img:UP+"2023/08/alfombra-de-bano-01.jpg"}
-  ],
   clientes:["08/35","05/18","05/19","08/27","08/44","05/10","05/09","05/08","05/15","05/16",
     "05/06","05/11","05/17","05/12","05/13","05/24","05/20","05/22","05/26","08/28","05/02",
     "08/30","08/31","05/25","08/33","08/32","08/34","08/36","08/37","08/38","08/39","08/40",
@@ -600,13 +588,21 @@ $("#wa").href="https://wa.me/"+c.whatsapp+"?text="+encodeURIComponent("Hola, me 
 
 /* productos */
 const grid=$("#prod-grid"),sub=$("#sub"),fprod=$("#foot-prod");
-CONFIG.productos.forEach(p=>{
+const allProducts=MAGNOTEX_PRODUCTS.allProducts;
+const featuredProducts=MAGNOTEX_PRODUCTS.featuredProductNames
+  .map(name=>allProducts.find(product=>product.n===name))
+  .filter(Boolean);
+const catalogProducts=allProducts;
+
+featuredProducts.forEach(p=>{
   const a=document.createElement("a"); a.className="tile"; a.href="#contacto";
   a.innerHTML=`<div class="img"><img loading="lazy" src="${p.img}" alt="${p.n}"></div>
     <div class="cap"><h3>${p.n}</h3><em>Consultar</em></div>`;
   grid.appendChild(a);
-  sub.insertAdjacentHTML("beforeend",`<li><a href="#productos">${p.n}</a></li>`);
-  fprod.insertAdjacentHTML("beforeend",`<li><a href="#productos">${p.n}</a></li>`);
+});
+catalogProducts.forEach(p=>{
+  sub.insertAdjacentHTML("beforeend",`<li><a href="catalogo_magnotex.html">${p.n}</a></li>`);
+  fprod.insertAdjacentHTML("beforeend",`<li><a href="catalogo_magnotex.html">${p.n}</a></li>`);
 });
 
 /* marquee — logos duplicados para loop continuo */
