@@ -13,7 +13,7 @@ window.MAGNOTEX_PRODUCTS={
     {n:"Faldones",img:"assets/producto-faldones.jpg"},
     {n:"Cobija térmica",img:"assets/producto-cobija-termica.jpg"},
     {n:"Mantelería",img:"assets/producto-manteleria.jpg"},
-    {n:"Alfombras de baño",img:"assets/producto-alfombra-bano.jpg"}
+    {n:"Alfombras de baño",img:"assets/producto-alfombra-bano.png"}
   ],
   featuredProductNames:["Salidas de baño","Sábanas","Toallas","Almohadas"]
 };
