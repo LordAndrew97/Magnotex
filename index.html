@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edredones Magnotex · Lencería de cama para hotelería</title>
-<meta name="description" content="La casa de lencería de cama que viste los hoteles del Ecuador. 21 años de fabricación especializada y más de 900 hoteles que confían en nosotros.">
+<meta name="description" content="Lencería de cama y baño de calidad, con amplia experiencia y la confianza de más de 900 hoteles en Ecuador.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -315,12 +315,12 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   <div class="hero-bg"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <span class="eyebrow">Lencería de cama para hotelería · desde 2003</span>
+      <span class="eyebrow">Lencería de cama para hotelería</span>
       <h1>Vestimos las camas<br>donde el Ecuador descansa.</h1>
       <span class="promesa">Su satisfacción al dormir.</span>
       <p>Fabricamos y comercializamos lencería de cama y baño para hoteles, resorts, hostales, apartamentos y cadenas. También tenemos línea hogar para quienes buscan confort y estilo en casa. Calidad sólida, buen acabado y entregas confiables.</p>
       <div class="hero-cta">
-        <a href="#productos" class="btn btn-brass">Ver nuestra línea</a>
+        <a href="#productos" class="btn btn-brass">Conoce nuestros productos</a>
         <a href="#contacto" class="btn btn-ghost">Solicitar cotización</a>
       </div>
     </div>
@@ -337,7 +337,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
     <div class="reveal">
       <p class="kicker">Desde hace dos décadas producimos lencería de cama pensada para el uso intensivo de los hoteles, con la calidad que cada huésped espera sentir al recostarse.</p>
       <div class="figs">
-        <div class="fig"><b>21</b><small>Años de trayectoria</small></div>
+        <div class="fig"><b id="years-experience">24</b><small>Años de trayectoria</small></div>
         <div class="fig"><b>+900</b><small>Hoteles atendidos</small></div>
         <div class="fig"><b>Nacional</b><small>Cobertura en todo el país</small></div>
       </div>
@@ -350,7 +350,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   <div class="wrap">
     <div class="lead reveal">
       <span class="eyebrow center">Clientes y hoteles que confían en nosotros</span>
-      <p class="kicker" style="margin:16px auto 0;max-width:720px">Hemos trabajado con más de 900 hoteles en todo el país en nuestros 21 años de trayectoria, respaldando la operación hotelera con lencería de cama y baño de calidad.</p>
+      <p class="kicker" style="margin:16px auto 0;max-width:720px">Hemos trabajado con más de 900 hoteles en todo el país durante nuestros <span id="years-experience-copy">24</span> años de trayectoria, respaldando la operación hotelera con lencería de cama y baño de calidad.</p>
     </div>
   </div>
   <div class="marquee"><div class="track" id="track"></div></div>
@@ -540,12 +540,14 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
    ===================================================================== */
 const UP="https://edredonesmagnotex.com/wp-content/uploads/";
 
+const ANIOS_TRAYECTORIA = new Date().getFullYear() - 2003 + 1;
+
 const CONFIG={
   logoLight: "assets/Magnotex-blanco.png",  /* sobre fondos oscuros */
   logoDark:  "assets/Magnotex.png",          /* sobre fondos claros  */
   tarjetas:  UP+"2023/05/tarjetas-de-credito.png",
 
-  aboutCorto:"Lencería de cama para el mercado hotelero ecuatoriano. 21 años de fabricación especializada y los más altos estándares de calidad.",
+  aboutCorto:`Lencería de cama para el mercado hotelero ecuatoriano. ${ANIOS_TRAYECTORIA} años de fabricación especializada y los más altos estándares de calidad.`,
 
   contacto:{
     oficina:"(02) 3805 794", oficinaTel:"023805794",
@@ -570,6 +572,8 @@ $("#logo-foot").src=CONFIG.logoLight;
 $("#tarjetas").src=CONFIG.tarjetas;
 $("#foot-about").textContent=CONFIG.aboutCorto;
 $("#year").textContent=new Date().getFullYear();
+$("#years-experience").textContent=ANIOS_TRAYECTORIA;
+$("#years-experience-copy").textContent=ANIOS_TRAYECTORIA;
 $("#dev").textContent=CONFIG.desarrolladoPor;
 
 const c=CONFIG.contacto;
