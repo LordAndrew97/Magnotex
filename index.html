@@ -237,6 +237,13 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:#6f817d}
 .copy a{color:#9fb0ad}.copy a:hover{color:var(--brass)}
 
+/* ===================== FORMULARIO DE COTIZACIÓN ===================== */
+.quote-form{margin-top:56px;padding:32px 0;border-top:1px solid var(--line-dark);display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}
+.quote-form h2{font-size:clamp(1.6rem,2.6vw,2.1rem);color:#fff;margin:12px 0}.quote-form p{max-width:360px}
+.quote-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.quote-field{display:grid;gap:6px}.quote-field--full{grid-column:1/-1}
+.quote-field label{font-size:.73rem;color:var(--brass);font-weight:800;letter-spacing:.12em;text-transform:uppercase}.quote-field label span{text-transform:none;letter-spacing:0;font-weight:500;color:#aebcb8}
+.quote-field input,.quote-field textarea{width:100%;border:1px solid rgba(255,255,255,.22);border-radius:2px;background:rgba(255,255,255,.06);color:#fff;font:inherit;padding:11px 12px}.quote-field textarea{min-height:86px;resize:vertical}.quote-field input::placeholder,.quote-field textarea::placeholder{color:#aebcb8}
+.quote-fields .btn{justify-content:center;width:max-content}.quote-note{grid-column:1/-1!important;max-width:none!important;font-size:.8rem!important;color:#8ea09c!important}.quote-form + .copy{margin-top:36px}
 /* ===================== WHATSAPP ===================== */
 .wa{position:fixed;right:24px;bottom:24px;z-index:80;width:58px;height:58px;border-radius:50%;
   background:#25d366;display:flex;align-items:center;justify-content:center;
@@ -285,6 +292,8 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 @media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.about{padding:56px 0}.prod-grid{grid-template-columns:1fr}.solution-tile{padding:24px}.value-line{padding:22px 0}
   .hero{padding:112px 0 76px}.hero h1{font-size:clamp(2.35rem,13vw,3.4rem)}
   .hero-cta .btn,.map-links .btn,.prod-action .btn{width:100%;justify-content:center}}
+@media(max-width:780px){.quote-form{grid-template-columns:1fr;gap:28px}}
+@media(max-width:560px){.quote-fields{grid-template-columns:1fr}.quote-field--full{grid-column:auto}.quote-fields .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   .hero-bg{animation:none}.track{animation:none}
@@ -507,7 +516,21 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
         </div>
       </div>
     </div>
-    <div class="copy">
+    <div class="quote-form" aria-labelledby="quote-title">
+      <div>
+        <span class="eyebrow">Cotización</span>
+        <h2 id="quote-title">Cuéntanos qué necesitas.</h2>
+        <p>Completa estos datos y prepararemos tu mensaje para enviarlo por WhatsApp.</p>
+      </div>
+      <form class="quote-fields" id="quote-form">
+        <div class="quote-field"><label for="quote-name">Nombre</label><input id="quote-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="quote-field"><label for="quote-phone">Teléfono</label><input id="quote-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="quote-field quote-field--full"><label for="quote-company">Empresa o proyecto <span>(opcional)</span></label><input id="quote-company" name="company" type="text" autocomplete="organization"></div>
+        <div class="quote-field quote-field--full"><label for="quote-message">¿Qué productos buscas?</label><textarea id="quote-message" name="message" required></textarea></div>
+        <button class="btn btn-brass" type="submit">Enviar por WhatsApp</button>
+        <p class="quote-note">Al continuar se abrirá WhatsApp con la información de tu solicitud. El mensaje no se enviará hasta que lo confirmes allí.</p>
+      </form>
+    </div>    <div class="copy">
       <span>© <span id="year"></span> Edredones Magnotex · Todos los derechos reservados.</span>
       <a id="dev" href="https://www.humadigitalstudio.com/" target="_blank" rel="noopener"></a>
     </div>
@@ -568,6 +591,8 @@ const cellularLinks=$("#f-cel"); c.celulares.forEach((celular,index)=>{if(index)
 $("#f-mail").textContent=c.correo; $("#f-mail").href="mailto:"+c.correo;
 $("#f-dir").textContent=c.direccion;
 $("#wa").href="https://wa.me/"+c.whatsapp+"?text="+encodeURIComponent("Hola, me interesan los productos de Magnotex.");
+const quoteForm=$("#quote-form");
+quoteForm.addEventListener("submit",event=>{event.preventDefault();const data=new FormData(quoteForm);const lines=[`Hola, soy ${data.get("name")}.`,`Teléfono: ${data.get("phone")}.`];if(data.get("company")){lines.push(`Empresa o proyecto: ${data.get("company")}.`);}lines.push(`Necesito: ${data.get("message")}`);window.open("https://wa.me/"+c.whatsapp+"?text="+encodeURIComponent(lines.join("\n")),"_blank","noopener");});
 
 /* productos */
 const grid=$("#prod-grid"),sub=$("#sub"),fprod=$("#foot-prod");
