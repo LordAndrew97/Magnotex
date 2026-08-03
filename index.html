@@ -285,8 +285,10 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   .nav a{color:var(--ink)!important;width:100%;padding:14px 0;font-size:1rem}
   .nav>li{width:100%;border-bottom:1px solid var(--line)}
   .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;
-    padding:0 0 8px 14px;min-width:0;display:none}
-  .has-sub.open .sub{display:block}
+    padding:8px 0 14px;min-width:0;display:none}
+  .has-sub.open .sub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 12px}
+  .has-sub.open>a::after{transform:rotate(225deg) translate(-1px,-1px)}
+  .sub a{padding:8px 3px;font-size:.78rem;line-height:1.35}
   .cta-pill{border:0!important;padding:14px 0!important}
   .figs{flex-wrap:wrap}.fig{flex:1 1 40%;border-right:0!important;border-top:1px solid var(--line)}
   .value-top{grid-template-columns:1fr;gap:22px}
