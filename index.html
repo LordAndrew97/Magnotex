@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Magnotex · Textiles para cada espacio</title>
 <meta name="description" content="Textiles de cama y baño de calidad para espacios de descanso, hospedaje y hogar.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
 <style>
 :root{
   --suite:#15292E;        /* verde-pizarra profundo (superficie de marca) */
@@ -27,15 +27,15 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Manrope",Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--linen);
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--linen);
   line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 .sec{padding:clamp(84px,9vw,132px) 0}
-h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.08;
+h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.08;
   letter-spacing:-.015em;font-optical-sizing:auto}
-.eyebrow{font-family:"Manrope",Inter,system-ui,sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.18em;
+.eyebrow{font-family:Inter,system-ui,sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.18em;
   text-transform:uppercase;color:var(--brass-d);display:inline-flex;align-items:center;gap:10px}
 
 .eyebrow.center{justify-content:center}
@@ -43,7 +43,7 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.08;
 .title em{font-style:italic;color:var(--brass-d)}
 .kicker{color:var(--muted);font-size:1.06rem;line-height:1.75;max-width:580px}
 
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:"Manrope",Inter,system-ui,sans-serif;font-weight:800;
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,system-ui,sans-serif;font-weight:800;
   font-size:.92rem;letter-spacing:.02em;padding:15px 30px;border-radius:2px;cursor:pointer;
   border:1px solid transparent;transition:.28s ease}
 .btn-brass{background:var(--brass);color:#fff}
@@ -66,7 +66,7 @@ header.scrolled .brand .light{opacity:0}
 header.scrolled .brand .dark{opacity:1}
 .nav{display:flex;align-items:center;gap:30px;list-style:none}
 .nav>li{position:relative}
-.nav a{font-family:"Manrope",Inter,system-ui,sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:6px 0;
+.nav a{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:6px 0;
   transition:color .2s}
 header.scrolled .nav a{color:var(--ink)}
 .nav a:hover{color:var(--brass)}
@@ -102,7 +102,7 @@ header.scrolled .burger span{background:var(--ink)}
 .hero .eyebrow{color:var(--brass)}
 .hero .eyebrow::before{background:var(--brass)}
 .hero h1{color:var(--cloud);font-size:clamp(2.6rem,6.2vw,5rem);margin:22px 0 6px;font-weight:300}
-.hero .promesa{font-family:"Fraunces";font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);
+.hero .promesa{font-family:Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);
   color:#d4ad72;font-weight:400;display:block;margin-bottom:24px}
 .hero p{color:#eef3f0;font-size:1.1rem;line-height:1.75;max-width:580px;margin-bottom:36px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
@@ -113,7 +113,7 @@ header.scrolled .burger span{background:var(--ink)}
 .figs{display:flex;gap:0;border-top:1px solid var(--line);margin-top:8px}
 .fig{flex:1;padding:26px 18px 0}
 .fig:not(:last-child){border-right:1px solid var(--line)}
-.fig b{font-family:"Fraunces";font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--brass-d);
+.fig b{font-family:Georgia,serif;font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--brass-d);
   font-weight:400;display:block;line-height:1}
 .fig small{font-size:.82rem;color:var(--muted);letter-spacing:.04em;display:block;margin-top:8px}
 
@@ -153,7 +153,7 @@ header.scrolled .burger span{background:var(--ink)}
 .tile:hover::after{opacity:1}
 .tile .cap{position:absolute;left:20px;right:20px;bottom:18px;z-index:2;color:#fff}
 .tile .cap h3{font-size:1.18rem;font-weight:400}
-.tile .cap em{font-style:normal;font-family:"Manrope",Inter,system-ui,sans-serif;font-size:.74rem;letter-spacing:.14em;
+.tile .cap em{font-style:normal;font-family:Inter,system-ui,sans-serif;font-size:.74rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--brass);opacity:0;transform:translateY(8px);
   display:inline-block;transition:.3s;margin-top:4px}
 .tile:hover .cap em{opacity:1;transform:none}
@@ -166,7 +166,7 @@ header.scrolled .burger span{background:var(--ink)}
 .process-flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,46px);padding-top:8px}
 .process-flow::before{content:"";position:absolute;top:31px;left:0;right:0;height:1px;background:var(--line-strong)}
 .process-step{position:relative;min-height:180px;padding:0;border:0}
-.step-number{position:relative;z-index:1;display:grid;place-items:center;width:62px;height:62px;margin:0 0 25px;background:var(--cloud);border:1px solid var(--brass);border-radius:50%;font-family:"Manrope",Inter,system-ui,sans-serif;color:var(--brass-d);font-size:.72rem;font-weight:800;letter-spacing:.12em}
+.step-number{position:relative;z-index:1;display:grid;place-items:center;width:62px;height:62px;margin:0 0 25px;background:var(--cloud);border:1px solid var(--brass);border-radius:50%;font-family:Inter,system-ui,sans-serif;color:var(--brass-d);font-size:.72rem;font-weight:800;letter-spacing:.12em}
 .process-step h3{font-size:clamp(1.4rem,2.1vw,1.8rem);color:var(--suite);margin:0 0 8px}
 .process-step p{font-size:1rem;line-height:1.65;color:var(--muted);margin:0;max-width:25ch}
 
@@ -204,7 +204,7 @@ header.scrolled .burger span{background:var(--ink)}
 .map-sec{background:var(--cloud);padding:clamp(72px,7vw,104px) 0}
 .map-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
 .map-card{background:var(--cloud);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(21,41,46,.08)}
-.map-frame{width:100%;height:340px;border:0;display:block}
+.map-static{min-height:340px;padding:clamp(32px,5vw,54px);display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:linear-gradient(rgba(14,33,38,.18),rgba(14,33,38,.78)),url("assets/solucion-apartamentos.png") center/cover}`r`n.map-static span{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}`r`n.map-static strong{font-family:Georgia,serif;font-size:clamp(1.6rem,3vw,2.35rem);font-weight:400;line-height:1.18;margin-top:12px;max-width:17ch}`r`n.map-static p{margin:10px 0 0;color:#e7ede9}
 .map-copy p{color:var(--muted);margin-top:10px;font-size:1rem}
 .map-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 
@@ -222,7 +222,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 .foot{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:48px}
 .foot .flogo{height:56px;margin-bottom:20px}
 .foot p{font-size:.92rem;color:#8ea09c;line-height:1.75;max-width:330px}
-.foot h4{color:#fff;font-family:"Fraunces";font-weight:400;font-size:1.15rem;margin-bottom:18px}
+.foot h4{color:#fff;font-family:Georgia,serif;font-weight:400;font-size:1.15rem;margin-bottom:18px}
 .flist{list-style:none;columns:2;column-gap:18px}
 .flist li{margin-bottom:9px;font-size:.9rem}
 .flist a:hover{color:var(--brass)}
@@ -459,7 +459,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
       </div>
     </div>
     <div class="reveal map-card">
-      <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-0.3295495,-78.4959946&z=18&output=embed" allowfullscreen title="Mapa de Magnotex"></iframe>
+      <div class="map-static" aria-label="Ubicación de Magnotex"><span>Ubicación</span><strong>Calle Río Malacatos y Río Napo</strong><p>Quito, Ecuador</p></div>
     </div>
   </div>
 </section>
@@ -477,7 +477,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
       <a href="https://www.instagram.com/magnotex/" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Instagram</a>
       <a href="https://www.facebook.com/www.edredonesmagnotex.ec" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Facebook</a>
     </div>
-    <div class="cta-phones">o llame ahora: <a id="cta-of" href="#"></a></div>
+    <div class="cta-phones">o llame ahora: <a id="cta-of" href="tel:023805794">(02) 3805 794</a></div>
   </div>
 </section>
 
@@ -497,9 +497,9 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
       </div>
       <div class="fc">
         <h4>Contáctanos</h4>
-        <div><span>Oficina</span><a id="f-of" href="#"></a></div>
+        <div><span>Oficina</span><a id="f-of" href="tel:023805794">(02) 3805 794</a></div>
         <div><span>Celular</span><span class="v" id="f-cel"></span></div>
-        <div><span>Correo</span><a id="f-mail" href="#"></a></div>
+        <div><span>Correo</span><a id="f-mail" href="mailto:magnotex_ventas@hotmail.com">magnotex_ventas@hotmail.com</a></div>
         <div><span>Dirección</span><span class="v" id="f-dir"></span></div>
         <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
           <a href="#mapa" class="btn btn-dark" style="padding:10px 14px;font-size:.82rem">Cómo llegar</a>
