@@ -163,17 +163,34 @@ header.scrolled .burger span{background:var(--ink)}
 .tile:hover .cap em{opacity:1;transform:none}
 
 /* ===================== PROCESO ===================== */
-.process-grid{grid-template-columns:repeat(4,1fr);gap:0;margin-top:6px;border-top:1px solid var(--line-strong)}
-.process-step{min-height:206px;padding:30px 26px 28px 0;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid var(--line-strong)}
-.process-step:not(:first-child){padding-left:26px;border-left:1px solid var(--line-strong)}
-.step-number{font-family:"Fraunces",Georgia,serif;color:var(--brass-d);font-size:1.05rem;letter-spacing:.1em;line-height:1}
-.process-step h3{font-size:1.32rem;color:var(--suite);margin:0 0 10px}
-.process-step p{font-size:.98rem;line-height:1.65;color:var(--muted);max-width:22ch}
+.process{background:var(--cloud)}
+.process-intro{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,7vw,100px);align-items:end;margin-bottom:58px}
+.process-intro h2{margin-top:16px}
+.process-intro .kicker{justify-self:end;max-width:390px}
+.process-flow{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:12%;padding:4px 0}
+.process-flow::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--line-strong)}
+.process-step{position:relative;min-height:176px;padding:28px 0;border-top:1px solid var(--line-strong)}
+.process-step:nth-child(odd){grid-column:1;text-align:right;padding-right:48px}
+.process-step:nth-child(even){grid-column:2;margin-top:82px;padding-left:48px}
+.process-step::before{content:"";position:absolute;top:33px;width:9px;height:9px;border-radius:50%;background:var(--brass)}
+.process-step:nth-child(odd)::before{right:-4px}
+.process-step:nth-child(even)::before{left:-5px}
+.step-number{display:block;font-family:"Manrope",Inter,system-ui,sans-serif;color:var(--brass-d);font-size:.72rem;font-weight:800;letter-spacing:.16em;margin-bottom:20px}
+.process-step h3{font-size:clamp(1.45rem,2.2vw,1.9rem);color:var(--suite);margin:0 0 8px}
+.process-step p{font-size:1rem;line-height:1.65;color:var(--muted);margin:0}
 
 /* ===================== VALOR ===================== */
 .value{background:var(--suite);color:#e7ede9}
 .value .title{color:#fff}
 .value .eyebrow{color:var(--brass)}.value .eyebrow::before{background:var(--brass)}
+.value-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,7vw,100px);align-items:end}
+.value-top .title{margin-top:16px}
+.value-lead{color:#c1ceca;font-size:1.1rem;line-height:1.75;max-width:520px}
+.value-ledger{margin-top:64px;border-bottom:1px solid var(--line-dark)}
+.value-line{display:grid;grid-template-columns:62px minmax(220px,1fr) minmax(280px,1.1fr);gap:26px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line-dark)}
+.value-line .proof-number{color:var(--brass);font-size:.74rem;font-weight:800;letter-spacing:.16em}
+.value-line h3{font-size:clamp(1.35rem,2.2vw,1.8rem);color:#fff;font-weight:400;margin:0}
+.value-line p{font-size:.98rem;color:#b6c3bf;line-height:1.65;margin:0}
 .val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:54px}
 .val{padding:30px 28px;border-top:1px solid var(--line-dark)}
 .val:not(:last-child){border-right:1px solid var(--line-dark)}
@@ -185,15 +202,22 @@ header.scrolled .burger span{background:var(--ink)}
 .intro .val p,.about .val p{color:var(--muted)}
 
 /* ===================== SOLUCIONES ===================== */
-.solutions-grid{align-items:start}
-.solutions-copy{max-width:560px}
-.solutions-copy h2{margin:18px 0 22px}
-.solutions-copy p{max-width:520px}
-.solution-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:10px}
-.solution-card{min-height:178px;padding:30px 28px;border:1px solid var(--line-strong);border-radius:8px;
-  background:var(--cloud);box-shadow:0 14px 34px rgba(21,41,46,.07)}
-.solution-card h3{font-size:1.22rem;color:var(--suite);margin-bottom:14px}
-.solution-card p{font-size:.96rem;color:var(--soft-ink);line-height:1.65;margin:0}
+.solutions{background:var(--linen)}
+.solutions-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,7vw,100px);align-items:end}
+.solutions-intro h2{margin:18px 0 0}
+.solutions-intro .kicker{max-width:540px}
+.solution-mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:142px;gap:12px;margin-top:58px}
+.solution-tile{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;overflow:hidden}
+.solution-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(14,33,38,.08),rgba(14,33,38,.48));pointer-events:none}
+.solution-tile > *{position:relative;z-index:1}
+.solution-tile .solution-label{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:auto}
+.solution-tile h3{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.1;margin:0 0 9px;font-weight:400}
+.solution-tile p{font-size:.94rem;line-height:1.6;margin:0;max-width:34ch}
+.solution-tile--boutique{grid-column:span 7;grid-row:span 2;color:#fff;background:linear-gradient(rgba(14,33,38,.2),rgba(14,33,38,.76)),url("assets/magnotex_cama_1200x737.png") center/cover}
+.solution-tile--hostales{grid-column:span 5;color:#fff;background:var(--suite)}
+.solution-tile--resorts{grid-column:span 5;color:#fff;background:#9c7740}
+.solution-tile--apartamentos{grid-column:span 7;color:var(--suite);background:#e4ddd0}
+.solution-tile--hostales::after,.solution-tile--resorts::after,.solution-tile--apartamentos::after{display:none}
 
 /* ===================== LIGHT CARDS ===================== */
 .light-card-grid .val{background:rgba(252,251,248,.72);border-color:var(--line-strong)}
@@ -251,10 +275,9 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:980px){
   .intro-grid,.about-grid{grid-template-columns:1fr;gap:42px}
-  .process-step:nth-child(odd){padding-left:0;border-left:0}
+  .solutions-intro{grid-template-columns:1fr;gap:22px}
   .about-img{order:-1;max-width:440px}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .process-grid{grid-template-columns:repeat(2,1fr)}
   .val-grid{grid-template-columns:1fr 1fr}
   .val{border-right:0}.val:nth-child(odd){border-right:1px solid var(--line-dark)}
   .intro .val:nth-child(odd),.about .val:nth-child(odd){border-right-color:var(--line-strong)}
@@ -274,14 +297,21 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   .has-sub.open .sub{display:block}
   .cta-pill{border:0!important;padding:14px 0!important}
   .figs{flex-wrap:wrap}.fig{flex:1 1 40%;border-right:0!important;border-top:1px solid var(--line)}
-  .solution-cards{gap:16px}
-  .solution-card{min-height:160px;padding:26px 24px}
+  .value-top{grid-template-columns:1fr;gap:22px}
+  .value-line{grid-template-columns:48px 1fr;gap:16px}
+  .value-line p{grid-column:2}
+  .process-intro{grid-template-columns:1fr;gap:22px;margin-bottom:42px}
+  .process-intro .kicker{justify-self:start}
+  .process-flow{grid-template-columns:1fr;padding-left:34px}
+  .process-flow::before{left:0}
+  .process-step,.process-step:nth-child(odd),.process-step:nth-child(even){grid-column:1;min-height:0;margin-top:0;padding:24px 0 24px 30px;text-align:left}
+  .process-step::before,.process-step:nth-child(odd)::before,.process-step:nth-child(even)::before{left:-5px;right:auto}
 }
-@media(max-width:560px){.solution-cards{grid-template-columns:1fr}}
-@media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.about{padding:56px 0}.prod-grid,.process-grid{grid-template-columns:1fr}.process-step{min-height:0;padding:24px 0}.process-step:not(:first-child){padding-left:0;border-left:0}.process-step p{max-width:none}.val-grid{grid-template-columns:1fr}
+@media(max-width:680px){.solution-mosaic{grid-template-columns:1fr;grid-auto-rows:auto}.solution-tile,.solution-tile--boutique,.solution-tile--hostales,.solution-tile--resorts,.solution-tile--apartamentos{grid-column:1;grid-row:auto;min-height:220px}.solution-tile--boutique{min-height:300px}}
+@media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.about{padding:56px 0}.prod-grid{grid-template-columns:1fr}.solution-tile{padding:24px}.value-line{padding:22px 0}.val-grid{grid-template-columns:1fr}
   .hero{padding:112px 0 76px}.hero h1{font-size:clamp(2.35rem,13vw,3.4rem)}
   .hero-cta .btn,.map-links .btn,.prod-action .btn{width:100%;justify-content:center}
-  .val{border-right:0!important}.solution-card{padding:24px 22px}}
+  .val{border-right:0!important}}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   .hero-bg{animation:none}.track{animation:none}
@@ -390,36 +420,35 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 </section>
 
 <!-- ===================== SOLUCIONES POR SEGMENTO ===================== -->
-<section class="about sec" id="soluciones">
-  <div class="wrap about-grid solutions-grid">
-    <div class="reveal solutions-copy">
-      <span class="eyebrow">Soluciones para hoteles</span>
-      <h2>Soluciones para distintos tipos de hoteles.</h2>
-      <p>Atendemos hoteles boutique, resorts, hostales, apartamentos y cadenas con líneas pensadas para el uso diario.</p>
-      <p>Te ayudamos con la selección de productos, cantidades y detalles para que el pedido sea claro y fácil de ordenar.</p>
-    </div>
-    <div class="reveal">
-      <div class="solution-cards">
-        <div class="solution-card"><h3>Hoteles boutique</h3><p>Un look cuidado y piezas que se ven bien en habitaciones pequeñas o de estilo más refinado.</p></div>
-        <div class="solution-card"><h3>Hostales y negocios turísticos</h3><p>Productos resistentes y prácticos para mucho uso diario.</p></div>
-        <div class="solution-card"><h3>Resorts y cadenas</h3><p>Volúmenes, consistencia y buena disponibilidad para operaciones más grandes.</p></div>
-        <div class="solution-card"><h3>Departamentos y apartamentos</h3><p>Opciones sencillas, confortables y fáciles de mantener.</p></div>
+<section class="solutions sec" id="soluciones">
+  <div class="wrap">
+    <div class="solutions-intro reveal">
+      <div>
+        <span class="eyebrow">Soluciones para hoteles</span>
+        <h2 class="title">Soluciones para distintos tipos de hoteles.</h2>
       </div>
+      <p class="kicker">Te ayudamos a definir productos, cantidades y detalles para que cada pedido responda a la dinámica de tu operación.</p>
+    </div>
+    <div class="solution-mosaic reveal">
+      <article class="solution-tile solution-tile--boutique"><span class="solution-label">01 · Estilo</span><h3>Hoteles boutique</h3><p>Un look cuidado y piezas que acompañan espacios con personalidad.</p></article>
+      <article class="solution-tile solution-tile--hostales"><span class="solution-label">02 · Ritmo diario</span><h3>Hostales y negocios turísticos</h3><p>Productos resistentes y prácticos para un uso constante.</p></article>
+      <article class="solution-tile solution-tile--resorts"><span class="solution-label">03 · Escala</span><h3>Resorts y cadenas</h3><p>Volúmenes, consistencia y buena disponibilidad para operaciones grandes.</p></article>
+      <article class="solution-tile solution-tile--apartamentos"><span class="solution-label">04 · Confort</span><h3>Departamentos y apartamentos</h3><p>Opciones sencillas, confortables y fáciles de mantener.</p></article>
     </div>
   </div>
 </section>
 
 <!-- ===================== PROCESO ===================== -->
-<section class="prod sec">
+<section class="process sec">
   <div class="wrap">
-    <div class="prod-head reveal">
+    <div class="process-intro reveal">
       <div>
         <span class="eyebrow">Proceso</span>
-        <h2 class="title" style="margin-top:16px">Cómo trabajamos</h2>
+        <h2 class="title">Cómo trabajamos</h2>
       </div>
-      <p class="kicker" style="max-width:380px">Un proceso simple: escuchar, recomendar, cotizar y entregar.</p>
+      <p class="kicker">Un recorrido claro, desde la primera conversación hasta la entrega.</p>
     </div>
-    <div class="prod-grid process-grid reveal">
+    <div class="process-flow reveal">
       <article class="process-step"><span class="step-number">01</span><div><h3>Diagnóstico</h3><p>Revisión de habitaciones, uso y requerimientos.</p></div></article>
       <article class="process-step"><span class="step-number">02</span><div><h3>Selección</h3><p>Productos, cantidades y detalles por habitación.</p></div></article>
       <article class="process-step"><span class="step-number">03</span><div><h3>Cotización</h3><p>Precio claro, tiempos y condiciones comerciales.</p></div></article>
@@ -431,15 +460,18 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 <!-- ===================== VALOR ===================== -->
 <section class="value sec">
   <div class="wrap">
-    <div class="reveal" style="max-width:680px">
-      <span class="eyebrow">Por qué Magnotex</span>
-      <h2 class="title" style="margin-top:16px">Un proveedor, no solo un producto.</h2>
+    <div class="value-top reveal">
+      <div>
+        <span class="eyebrow">Por qué Magnotex</span>
+        <h2 class="title">Un proveedor, no solo un producto.</h2>
+      </div>
+      <p class="value-lead">Cada decisión —desde la tela hasta la entrega— está pensada para que el abastecimiento sea claro, consistente y fácil de gestionar.</p>
     </div>
-    <div class="val-grid reveal">
-      <div class="val"><h3>Fabricación<br>especializada</h3><p>Producimos piezas pensadas para uso hotelero y para resistir lavados frecuentes.</p></div>
-      <div class="val"><h3>Calidad<br>hotelera</h3><p>Buenas telas, buenos acabados y una presentación que se nota en la habitación.</p></div>
-      <div class="val"><h3>Cobertura<br>nacional</h3><p>Atendemos hoteles en todo el país con experiencia de muchos años.</p></div>
-      <div class="val"><h3>Asesoramiento<br>cercano</h3><p>Le ayudamos a definir lo que mejor se ajusta a su operación.</p></div>
+    <div class="value-ledger reveal">
+      <article class="value-line"><span class="proof-number">01</span><h3>Fabricación especializada</h3><p>Producimos piezas pensadas para el uso hotelero y para resistir lavados frecuentes.</p></article>
+      <article class="value-line"><span class="proof-number">02</span><h3>Calidad hotelera</h3><p>Buenas telas, buenos acabados y una presentación que se nota en la habitación.</p></article>
+      <article class="value-line"><span class="proof-number">03</span><h3>Cobertura nacional</h3><p>Atendemos hoteles en todo el país con experiencia de muchos años.</p></article>
+      <article class="value-line"><span class="proof-number">04</span><h3>Asesoramiento cercano</h3><p>Le ayudamos a definir lo que mejor se ajusta a su operación.</p></article>
     </div>
   </div>
 </section>
