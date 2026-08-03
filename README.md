@@ -4,7 +4,7 @@
 
 Este proyecto corresponde a la web corporativa de Magnotex, empresa dedicada a la lencería de cama y baño para hoteles, resorts, hostales, apartamentos, negocios turísticos y clientes corporativos del sector hospitality.
 
-La web presenta la propuesta comercial de la marca, su experiencia en el mercado hotelero, sus principales líneas de producto, servicios, soluciones por tipo de cliente y canales de contacto.
+La web presenta la propuesta comercial de la marca, su experiencia en el mercado hotelero, sus principales líneas de producto, soluciones por tipo de cliente y canales de contacto.
 
 ## URL publicada
 
@@ -30,7 +30,6 @@ La página debe ayudar a que hoteles y negocios de hospedaje entiendan rápidame
 - Soluciones para hoteles: tarjetas orientadas a segmentos como hoteles boutique, hostales, resorts, cadenas y apartamentos.
 - Proceso: explicación breve del flujo de trabajo comercial.
 - Por qué Magnotex: argumentos de valor y diferenciadores.
-- Servicios: resumen de la oferta para operaciones hoteleras.
 - Ubicación: mapa y enlace para abrir la ruta.
 - Contacto: teléfonos, correo, redes sociales y WhatsApp.
 
@@ -95,7 +94,7 @@ En cada tamaño conviene comprobar:
 - Contraste de textos sobre imágenes.
 - Espaciado lateral y vertical.
 - Funcionamiento del menú móvil.
-- Distribución de tarjetas en productos, servicios y soluciones.
+- Distribución de contenidos en productos y soluciones.
 - Que no existan textos cortados, solapados o demasiado cercanos a los bordes.
 
 ## Criterios de calidad antes de publicar
