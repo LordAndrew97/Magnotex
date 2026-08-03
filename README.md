@@ -2,7 +2,7 @@
 
 ## Descripción general
 
-Este proyecto corresponde a la web corporativa de Magnotex, empresa dedicada a la lencería de cama y baño para hoteles, resorts, hostales, apartamentos, negocios turísticos y clientes corporativos del sector hospitality.
+Este proyecto corresponde a la web corporativa de Magnotex, empresa dedicada a ofrecer soluciones textiles para hoteles, alojamientos, hogares y otros espacios.
 
 La web presenta la propuesta comercial de la marca, su experiencia en el mercado hotelero, sus principales líneas de producto, soluciones por tipo de cliente y canales de contacto.
 
