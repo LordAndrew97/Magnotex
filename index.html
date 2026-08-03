@@ -436,7 +436,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
         <span class="eyebrow">Por qué Magnotex</span>
         <h2 class="title">Un proveedor, no solo un producto.</h2>
       </div>
-      <p class="value-lead">Cada decisión —desde la tela hasta la entrega— está pensada para que el abastecimiento sea claro, consistente y fácil de gestionar.</p>
+      <p class="value-lead">Cada decisión, desde la tela hasta la entrega, está pensada para que el abastecimiento sea claro, consistente y fácil de gestionar.</p>
     </div>
     <div class="value-ledger reveal">
       <article class="value-line"><span class="proof-number">01</span><h3>Fabricación especializada</h3><p>Producimos piezas pensadas para un uso intenso y para resistir lavados frecuentes.</p></article>
@@ -520,7 +520,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 <script src="assets/productos-magnotex.js"></script>
 <script>
 /* =====================================================================
-   CONFIG — todos los datos editables del negocio en un solo lugar.
+   CONFIG: todos los datos editables del negocio en un solo lugar.
    ===================================================================== */
 
 
@@ -587,7 +587,7 @@ catalogProducts.forEach(p=>{
   fprod.insertAdjacentHTML("beforeend",`<li><a href="catalogo_magnotex.html">${p.n}</a></li>`);
 });
 
-/* marquee — logos duplicados para loop continuo */
+/* Marquee: logotipos duplicados para un desplazamiento continuo */
 const track=$("#track");
 const logoHTML=CONFIG.clientes.map(x=>{const[m,n]=x.split("/");
   return `<img loading="lazy" src="assets/clientes/${m}/clientes-${n}.png" alt="Hotel cliente">`;}).join("");
