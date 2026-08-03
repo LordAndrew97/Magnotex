@@ -163,12 +163,12 @@ header.scrolled .burger span{background:var(--ink)}
 .tile:hover .cap em{opacity:1;transform:none}
 
 /* ===================== PROCESO ===================== */
-.process-grid{grid-template-columns:repeat(4,1fr);gap:20px}
-.process-card{min-height:178px;padding:30px 26px;border:1px solid var(--line-strong);border-radius:8px;
-  background:var(--linen);box-shadow:0 12px 30px rgba(21,41,46,.06)}
-.process-card h3{font-size:1.22rem;color:var(--suite);margin-bottom:12px}
-.process-card em{display:block;font-style:normal;font-family:"Manrope",Inter,system-ui,sans-serif;
-  font-size:.82rem;font-weight:700;letter-spacing:.08em;line-height:1.55;text-transform:uppercase;color:var(--muted)}
+.process-grid{grid-template-columns:repeat(4,1fr);gap:0;margin-top:6px;border-top:1px solid var(--line-strong)}
+.process-step{min-height:206px;padding:30px 26px 28px 0;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid var(--line-strong)}
+.process-step:not(:first-child){padding-left:26px;border-left:1px solid var(--line-strong)}
+.step-number{font-family:"Fraunces",Georgia,serif;color:var(--brass-d);font-size:1.05rem;letter-spacing:.1em;line-height:1}
+.process-step h3{font-size:1.32rem;color:var(--suite);margin:0 0 10px}
+.process-step p{font-size:.98rem;line-height:1.65;color:var(--muted);max-width:22ch}
 
 /* ===================== VALOR ===================== */
 .value{background:var(--suite);color:#e7ede9}
@@ -251,6 +251,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:980px){
   .intro-grid,.about-grid{grid-template-columns:1fr;gap:42px}
+  .process-step:nth-child(odd){padding-left:0;border-left:0}
   .about-img{order:-1;max-width:440px}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
   .process-grid{grid-template-columns:repeat(2,1fr)}
@@ -277,7 +278,7 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
   .solution-card{min-height:160px;padding:26px 24px}
 }
 @media(max-width:560px){.solution-cards{grid-template-columns:1fr}}
-@media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.about{padding:56px 0}.prod-grid,.process-grid{grid-template-columns:1fr}.val-grid{grid-template-columns:1fr}
+@media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.about{padding:56px 0}.prod-grid,.process-grid{grid-template-columns:1fr}.process-step{min-height:0;padding:24px 0}.process-step:not(:first-child){padding-left:0;border-left:0}.process-step p{max-width:none}.val-grid{grid-template-columns:1fr}
   .hero{padding:112px 0 76px}.hero h1{font-size:clamp(2.35rem,13vw,3.4rem)}
   .hero-cta .btn,.map-links .btn,.prod-action .btn{width:100%;justify-content:center}
   .val{border-right:0!important}.solution-card{padding:24px 22px}}
@@ -419,10 +420,10 @@ footer{background:#0e2126;color:#9fb0ad;padding:78px 0 0}
       <p class="kicker" style="max-width:380px">Un proceso simple: escuchar, recomendar, cotizar y entregar.</p>
     </div>
     <div class="prod-grid process-grid reveal">
-      <article class="process-card"><div><h3>1. Diagnóstico</h3><em>Revisión de habitaciones, uso y requerimientos</em></div></article>
-      <article class="process-card"><div><h3>2. Selección</h3><em>Productos, cantidades y detalles por habitación</em></div></article>
-      <article class="process-card"><div><h3>3. Cotización</h3><em>Precio claro, tiempos y condiciones comerciales</em></div></article>
-      <article class="process-card"><div><h3>4. Entrega</h3><em>Logística y acompañamiento postventa</em></div></article>
+      <article class="process-step"><span class="step-number">01</span><div><h3>Diagnóstico</h3><p>Revisión de habitaciones, uso y requerimientos.</p></div></article>
+      <article class="process-step"><span class="step-number">02</span><div><h3>Selección</h3><p>Productos, cantidades y detalles por habitación.</p></div></article>
+      <article class="process-step"><span class="step-number">03</span><div><h3>Cotización</h3><p>Precio claro, tiempos y condiciones comerciales.</p></div></article>
+      <article class="process-step"><span class="step-number">04</span><div><h3>Entrega</h3><p>Logística y acompañamiento postventa.</p></div></article>
     </div>
   </div>
 </section>
