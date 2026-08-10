@@ -79,19 +79,20 @@ header.scrolled .brand .light{opacity:0}
 header.scrolled .brand .dark{opacity:1}
 .nav{display:flex;align-items:center;gap:30px;list-style:none}
 .nav>li{position:relative}
-.nav a{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:6px 0;
+.nav a,.products-toggle{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:.92rem;color:#fff;padding:6px 0;
   transition:color .2s}
-header.scrolled .nav a{color:var(--ink)}
-.nav a:hover{color:var(--brass)}
-header.scrolled .nav a:hover{color:var(--brass-d)}
-.has-sub>a::after{content:"";display:inline-block;width:5px;height:5px;margin-left:7px;
+.products-toggle{border:0;background:none;cursor:pointer}
+header.scrolled .nav a,header.scrolled .products-toggle{color:var(--ink)}
+.nav a:hover,.products-toggle:hover{color:var(--brass)}
+header.scrolled .nav a:hover,header.scrolled .products-toggle:hover{color:var(--brass-d)}
+.products-toggle::after{content:"";display:inline-block;width:5px;height:5px;margin-left:7px;
   border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
   transform:rotate(45deg) translateY(-2px)}
 .sub{position:absolute;top:140%;left:50%;transform:translateX(-50%) translateY(8px);
   background:var(--cloud);border:1px solid var(--line);border-radius:6px;padding:10px;
   min-width:240px;list-style:none;opacity:0;visibility:hidden;transition:.25s;
   box-shadow:0 24px 50px rgba(13,28,94,.16);columns:1}
-.has-sub:hover .sub{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.has-sub:hover .sub,.has-sub.open .sub{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .sub a{display:block;padding:9px 14px;border-radius:4px;color:var(--ink)!important;font-weight:500;
   font-size:.88rem}
 .sub a:hover{background:var(--linen);color:var(--brass-d)!important}
@@ -207,10 +208,10 @@ header.scrolled .burger span{background:var(--ink)}
 .solution-tile .solution-label{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:auto}
 .solution-tile h3{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.1;margin:0 0 9px;font-weight:400}
 .solution-tile p{font-size:.94rem;line-height:1.6;margin:0;max-width:34ch}
-.solution-tile--boutique{color:#fff;background:url("assets/solucion-boutique.png") center/cover}
-.solution-tile--hostales{color:#fff;background:url("assets/solucion-hostales.png") center/cover}
-.solution-tile--resorts{color:#fff;background:url("assets/solucion-resorts.png") center/cover}
-.solution-tile--apartamentos{color:#fff;background:url("assets/solucion-apartamentos.png") center/cover}
+.solution-tile--boutique{color:#fff;background:url("assets/solucion-boutique.jpg") center/cover}
+.solution-tile--hostales{color:#fff;background:url("assets/solucion-hostales.jpg") center/cover}
+.solution-tile--resorts{color:#fff;background:url("assets/solucion-resorts.jpg") center/cover}
+.solution-tile--apartamentos{color:#fff;background:url("assets/solucion-apartamentos.jpg") center/cover}
 
 
 /* ===================== MAPA ===================== */
@@ -282,12 +283,12 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
     flex-direction:column;align-items:flex-start;gap:0;padding:100px 26px 40px;
     transform:translateX(110%);transition:.35s ease;box-shadow:-20px 0 60px rgba(0,0,0,.2);overflow-y:auto}
   .nav.open{transform:none}
-  .nav a{color:var(--ink)!important;width:100%;padding:14px 0;font-size:1rem}
+  .nav a,.products-toggle{color:var(--ink)!important;width:100%;padding:14px 0;font-size:1rem;text-align:left}
   .nav>li{width:100%;border-bottom:1px solid var(--line)}
   .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;
     padding:8px 0 14px;min-width:0;display:none}
   .has-sub.open .sub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 12px}
-  .has-sub.open>a::after{transform:rotate(225deg) translate(-1px,-1px)}
+  .has-sub.open>.products-toggle::after{transform:rotate(225deg) translate(-1px,-1px)}
   .sub a{padding:8px 3px;font-size:.78rem;line-height:1.35}
   .cta-pill{border:0!important;padding:14px 0!important}
   .figs{flex-wrap:wrap}.fig{flex:1 1 40%;border-right:0!important;border-top:1px solid var(--line)}
@@ -327,7 +328,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
     <ul class="nav" id="nav">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
-      <li class="has-sub"><a href="#productos">Productos</a><ul class="sub" id="sub"></ul></li>
+      <li class="has-sub"><button class="products-toggle" type="button" aria-expanded="false" aria-controls="sub">Productos</button><ul class="sub" id="sub"></ul></li>
       <li><a href="#clientes">Clientes</a></li>
 
       <li><a href="catalogo_magnotex.html">Catálogo</a></li>
@@ -638,20 +639,38 @@ const header=$("#header");
 addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>40));
 
 /* menú móvil */
-const burger=$("#burger"),nav=$("#nav"),productsToggle=document.querySelector(".has-sub>a");
+const burger=$("#burger"),nav=$("#nav"),productsToggle=$(".products-toggle"),productsMenu=productsToggle.closest(".has-sub");
+const setProductsOpen=open=>{
+  productsMenu.classList.toggle("open",open);
+  productsToggle.setAttribute("aria-expanded",String(open));
+};
 const setMenuOpen=open=>{
   nav.classList.toggle("open",open);
   burger.setAttribute("aria-expanded",String(open));
+  if(!open) setProductsOpen(false);
 };
 burger.addEventListener("click",()=>setMenuOpen(!nav.classList.contains("open")));
-productsToggle.addEventListener("click",e=>{
-  if(innerWidth<=780){e.preventDefault();e.currentTarget.closest(".has-sub").classList.toggle("open");}});
+productsToggle.addEventListener("click",()=>setProductsOpen(!productsMenu.classList.contains("open")));
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-  if(innerWidth>780) return;
-  const parentSub=a.closest(".has-sub");
-  if(parentSub && a.parentElement===parentSub) return;
-  setMenuOpen(false);
+  setProductsOpen(false);
+  if(innerWidth<=780) setMenuOpen(false);
 }));
+document.addEventListener("click",event=>{
+  if(!productsMenu.contains(event.target)) setProductsOpen(false);
+});
+document.addEventListener("keydown",event=>{
+  if(event.key!=="Escape") return;
+  if(productsMenu.classList.contains("open")){
+    setProductsOpen(false);
+    productsToggle.focus();
+  }else if(nav.classList.contains("open")){
+    setMenuOpen(false);
+    burger.focus();
+  }
+});
+addEventListener("resize",()=>{
+  if(innerWidth>780&&nav.classList.contains("open")) setMenuOpen(false);
+});
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{
