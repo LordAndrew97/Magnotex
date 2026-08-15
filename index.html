@@ -3,31 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Magnotex · Soluciones textiles para cada espacio</title>
+<title>Magnotex | Proveedor hotelero</title>
 <meta name="description" content="Soluciones textiles de calidad para hoteles, alojamientos y hogares.">
 <link rel="canonical" href="https://magnotex.humads.workers.dev/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_EC">
-<meta property="og:title" content="Magnotex | Soluciones textiles para cada espacio">
+<meta property="og:title" content="Magnotex | Proveedor hotelero">
 <meta property="og:description" content="Confort, calidad y excelentes acabados para hoteles, alojamientos y hogares.">
 <meta property="og:url" content="https://magnotex.humads.workers.dev/">
 <meta property="og:image" content="https://magnotex.humads.workers.dev/assets/magnotex_cama_1200x737.png">
 <meta property="og:image:alt" content="Productos Magnotex para el descanso">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Magnotex | Soluciones textiles para cada espacio">
+<meta name="twitter:title" content="Magnotex | Proveedor hotelero">
 <meta name="twitter:description" content="Confort, calidad y excelentes acabados para hoteles, alojamientos y hogares.">
 <meta name="twitter:image" content="https://magnotex.humads.workers.dev/assets/magnotex_cama_1200x737.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <style>
 :root{
-  --suite:#0D1C5E;        /* azul profundo del logotipo (superficie de marca) */
+  --suite:#0D1C5E;        /* azul profundo del logotipo */
   --suite-2:#182A78;
-  --linen:#F2F7F3;        /* verde muy pálido (contenido) */
-  --cloud:#FCFDFC;        /* blanco verdoso */
-  --brass:#4CC45C;        /* verde claro (acento sobre oscuro) */
+  --linen:#F2F7F3;        /* verde muy pálido */
+  --cloud:#FCFDFC;
+  --brass:#4CC45C;        /* verde del logotipo */
   --brass-d:#1D7124;
-  --sage:#7C9A83;         /* verde apagado (frescura) */
+  --sage:#7C9A83;
   --ink:#17281C;
   --muted:#4E5A52;
   --soft-ink:#2E3D33;
@@ -38,14 +38,16 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--linen);
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#F2F7F3 0%,#FCFDFC 100%);
   line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid #2E8C38;outline-offset:4px}
-section[id],footer[id]{scroll-margin-top:90px}
+:focus-visible{outline:3px solid var(--brass-d);outline-offset:4px}
+section[id],footer[id],#cotizacion{scroll-margin-top:90px}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 .sec{padding:clamp(84px,9vw,132px) 0}
+.btn{box-shadow:0 12px 24px rgba(13,28,94,.08)}
+.btn:hover{box-shadow:0 16px 30px rgba(13,28,94,.14)}
 h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.08;
   letter-spacing:-.015em;font-optical-sizing:auto}
 .eyebrow{font-family:Inter,system-ui,sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.18em;
@@ -59,8 +61,8 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.08;
 .btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,system-ui,sans-serif;font-weight:800;
   font-size:.92rem;letter-spacing:.02em;padding:15px 30px;border-radius:2px;cursor:pointer;
   border:1px solid transparent;transition:.28s ease}
-.btn-brass{background:var(--brass-d);color:#fff}
-.btn-brass:hover{background:#145018;transform:translateY(-2px)}
+.btn-brass{background:var(--brass);color:var(--suite)}
+.btn-brass:hover{background:#79DE86;transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
 .btn-ghost:hover{background:#fff;color:var(--suite);border-color:#fff}
 .btn-dark{background:var(--suite);color:#fff}
@@ -105,19 +107,19 @@ header.scrolled .cta-pill{color:var(--brass-d)!important}
 header.scrolled .burger span{background:var(--ink)}
 
 /* ===================== HERO ===================== */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;
-  padding:120px 0 80px;overflow:hidden}
+.hero{position:relative;min-height:100vh;display:flex;align-items:stretch;
+  padding:104px 0 44px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('assets/Portada.jpg') center/cover no-repeat;
   transform:scale(1.08);animation:slowzoom 18s ease-in-out infinite alternate;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(105deg,rgba(10,21,71,.80) 0%,rgba(13,28,94,.62) 48%,rgba(13,28,94,.28) 100%)}
 @keyframes slowzoom{to{transform:scale(1)}}
-.hero-inner{max-width:760px}
+.hero>.wrap{width:100%;display:grid}
+.hero-inner{max-width:760px;display:flex;flex-direction:column;align-items:flex-start}
 .hero .eyebrow{color:var(--brass)}
 .hero .eyebrow::before{background:var(--brass)}
-.hero h1{color:var(--cloud);font-size:clamp(2.6rem,6.2vw,5rem);margin:22px 0 6px;font-weight:300}
 .hero .promesa{font-family:Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);
-  color:#79DE86;font-weight:400;display:block;margin-bottom:24px}
+  color:#79DE86;font-weight:400;display:block;margin:auto 0 24px}
 .hero p{color:#E7EEF8;font-size:1.1rem;line-height:1.75;max-width:580px;margin-bottom:36px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 /* ===================== INTRO + CIFRAS ===================== */
@@ -158,9 +160,10 @@ header.scrolled .burger span{background:var(--ink)}
   margin-bottom:50px;flex-wrap:wrap}
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .prod-action{display:flex;justify-content:center;margin-top:34px}
-.tile{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;background:var(--linen)}
+.tile{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;background:var(--linen);border:1px solid rgba(13,28,94,.06);box-shadow:0 16px 32px rgba(13,28,94,.08);transition:transform .3s ease,box-shadow .3s ease}
 .tile .img{aspect-ratio:4/5;overflow:hidden}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.tile:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(13,28,94,.14)}
 .tile:hover img{transform:scale(1.07)}
 .tile::after{content:"";position:absolute;inset:0;
   background:linear-gradient(transparent 34%,rgba(10,21,71,.9));opacity:.9;transition:.3s}
@@ -217,7 +220,7 @@ header.scrolled .burger span{background:var(--ink)}
 /* ===================== MAPA ===================== */
 .map-sec{background:var(--cloud);padding:clamp(72px,7vw,104px) 0}
 .map-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
-.map-card{background:var(--cloud);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(13,28,94,.08)}
+.map-card{background:var(--cloud);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 18px 40px rgba(13,28,94,.08)}
 .map-frame{width:100%;height:340px;border:0;display:block}
 .map-copy p{color:var(--muted);margin-top:10px;font-size:1rem}
 .map-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
@@ -288,7 +291,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
   .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;
     padding:8px 0 14px;min-width:0;display:none}
   .has-sub.open .sub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 12px}
-  .has-sub.open>.products-toggle::after{transform:rotate(225deg) translate(-1px,-1px)}
+  .has-sub.open .products-toggle::after{transform:rotate(225deg) translate(-1px,-1px)}
   .sub a{padding:8px 3px;font-size:.78rem;line-height:1.35}
   .cta-pill{border:0!important;padding:14px 0!important}
   .figs{flex-wrap:wrap}.fig{flex:1 1 40%;border-right:0!important;border-top:1px solid var(--line)}
@@ -305,7 +308,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
 }
 @media(max-width:680px){.solution-mosaic{grid-template-columns:1fr;grid-auto-rows:auto}.solution-tile,.solution-tile--boutique,.solution-tile--hostales,.solution-tile--resorts,.solution-tile--apartamentos{grid-column:1;grid-row:auto;min-height:260px}}
 @media(max-width:480px){.wrap{padding:0 18px}.sec{padding:72px 0}.about{padding:56px 0}.prod-grid{grid-template-columns:1fr}.solution-tile{padding:24px}.value-line{padding:22px 0}
-  .hero{padding:112px 0 76px}.hero h1{font-size:clamp(2.35rem,13vw,3.4rem)}
+  .hero{padding:96px 0 30px}
   .hero-cta .btn,.map-links .btn,.prod-action .btn{width:100%;justify-content:center}}
 @media(max-width:780px){.quote-form{grid-template-columns:1fr;gap:28px}}
 @media(max-width:560px){.quote-fields{grid-template-columns:1fr}.quote-field--full{grid-column:auto}.quote-fields .btn{width:100%}}
@@ -321,8 +324,8 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
 <header id="header">
   <div class="wrap hbar">
     <a class="brand" href="#inicio">
-      <img class="light" id="logo-light" alt="Magnotex">
-      <img class="dark"  id="logo-dark"  alt="Magnotex">
+      <img class="light" id="logo-light" src="assets/Magnotex-blanco.png" alt="Magnotex" width="480" height="179">
+      <img class="dark" id="logo-dark" src="assets/Magnotex.png" alt="Magnotex" width="818" height="305">
     </a>
     <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <ul class="nav" id="nav">
@@ -332,7 +335,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
       <li><a href="#clientes">Clientes</a></li>
 
       <li><a href="catalogo_magnotex.html">Catálogo</a></li>
-      <li><a href="#contacto" class="cta-pill">Cotizar</a></li>
+      <li><a href="#cotizacion" class="cta-pill">Cotizar</a></li>
     </ul>
   </div>
 </header>
@@ -343,12 +346,10 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
   <div class="wrap">
     <div class="hero-inner">
       <span class="eyebrow">Soluciones textiles</span>
-      <h1>Vestimos las camas<br>donde el Ecuador descansa.</h1>
-      <span class="promesa">Su satisfacción al dormir.</span>
-      <p>Magnotex ofrece soluciones textiles para hoteles, alojamientos y hogares, combinando confort, calidad y excelentes acabados.</p>
+      <h1 class="promesa">Su satisfacción al dormir.</h1>
       <div class="hero-cta">
         <a href="#productos" class="btn btn-brass">Conoce nuestros productos</a>
-        <a href="#contacto" class="btn btn-ghost">Solicitar cotización</a>
+        <a href="#cotizacion" class="btn btn-ghost">Solicitar cotización</a>
       </div>
     </div>
   </div>
@@ -362,9 +363,9 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
       <h2 style="margin-top:18px">Hechos para el uso<br>de todos los días.</h2>
     </div>
     <div class="reveal">
-      <p class="kicker">Desde hace más de dos décadas desarrollamos soluciones textiles pensadas para acompañar el uso diario, con calidad que se siente en cada espacio.</p>
+      <p class="kicker">Desde hace más de 26 años desarrollamos soluciones textiles pensadas para acompañar el uso diario, con calidad que se siente en cada espacio.</p>
       <div class="figs">
-        <div class="fig"><b id="years-experience">27</b><small>Años de trayectoria</small></div>
+        <div class="fig"><b id="years-experience">26</b><small>Años de trayectoria</small></div>
         <div class="fig"><b>+900</b><small>Hoteles atendidos</small></div>
         <div class="fig"><b>Nacional</b><small>Cobertura en todo el país</small></div>
       </div>
@@ -377,7 +378,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
   <div class="wrap">
     <div class="lead reveal">
       <span class="eyebrow center">Clientes y hoteles que confían en nosotros</span>
-      <p class="kicker" style="margin:16px auto 0;max-width:720px">Hemos trabajado con más de 900 hoteles en todo el país durante nuestros <span id="years-experience-copy">27</span> años de trayectoria, respaldando la operación hotelera con productos de calidad.</p>
+      <p class="kicker" style="margin:16px auto 0;max-width:720px">Hemos trabajado con más de 900 hoteles en todo el país durante nuestros <span id="years-experience-copy">26</span> años de trayectoria, respaldando la operación hotelera con productos de calidad.</p>
     </div>
   </div>
   <div class="marquee"><div class="track" id="track"></div></div>
@@ -387,12 +388,12 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
 <section class="about sec" id="nosotros">
   <div class="wrap about-grid">
     <div class="about-img reveal">
-      <img src="assets/magnotex_cama_1200x737.png" alt="Productos Magnotex para el descanso">
+      <img src="assets/magnotex_cama_1200x737.png" alt="Productos Magnotex para el descanso" width="1200" height="737">
     </div>
     <div class="reveal">
-      <span class="eyebrow">Edredones Magnotex</span>
+      <span class="eyebrow">Magnotex</span>
       <h2>Calidad que se siente,<br>lavado tras lavado.</h2>
-      <p>Somos una empresa ecuatoriana dedicada a la producción y comercialización de soluciones textiles. Fabricamos edredones, colchas, duvets, fundas, sábanas, almohadas, protectores, toallas, salidas de baño, faldones y mantelería.</p>
+      <p>Somos una empresa dedicada a la fabricación de lencería hotelera y hogar.</p>
       <p>Cada pieza se elabora con procesos y materiales escogidos para acompañar el uso diario, sin perder la suavidad y la presentación que hacen especial a cada espacio.</p>
     </div>
   </div>
@@ -496,7 +497,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
     <span class="eyebrow center" style="color:var(--brass)">Hablemos</span>
     <h2>¿Listo para renovar sus espacios?</h2>
     <p>Llámenos, escríbanos o visítenos. Le ayudamos a encontrar opciones de confort y diseño para cada espacio.</p>
-    <a href="#contacto" class="btn btn-brass">Contáctenos</a>
+    <a href="#cotizacion" class="btn btn-brass">Contáctenos</a>
     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px">
       <a href="https://wa.me/593991570939" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">WhatsApp</a>
       <a href="https://www.instagram.com/magnotex/" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Instagram</a>
@@ -511,10 +512,10 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
   <div class="wrap">
     <div class="foot">
       <div>
-        <img class="flogo" id="logo-foot" alt="Magnotex">
+        <img class="flogo" id="logo-foot" src="assets/Magnotex-blanco.png" alt="Magnotex" width="480" height="179">
         <p id="foot-about"></p>
         <div class="pay"><span style="color:var(--brass);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase">Aceptamos todas las tarjetas</span>
-          <img id="tarjetas" alt="Tarjetas de crédito y débito"></div>
+          <img id="tarjetas" src="assets/tarjetas-de-credito.png" alt="Tarjetas de crédito y débito" width="1920" height="195"></div>
       </div>
       <div>
         <h4>Productos</h4>
@@ -531,7 +532,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
         </div>
       </div>
     </div>
-    <div class="quote-form" aria-labelledby="quote-title">
+    <div class="quote-form" id="cotizacion" aria-labelledby="quote-title">
       <div>
         <span class="eyebrow">Cotización</span>
         <h2 id="quote-title">Cuéntanos qué necesitas.</h2>
@@ -563,7 +564,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
    ===================================================================== */
 
 
-const ANIOS_TRAYECTORIA = new Date().getFullYear() - 2000 + 1;
+const ANIOS_TRAYECTORIA = 26;
 
 const CONFIG={
   logoLight: "assets/Magnotex-blanco.png",  /* sobre fondos oscuros */
@@ -589,10 +590,14 @@ const CONFIG={
 };
 
 const $=s=>document.querySelector(s);
-$("#logo-light").src=CONFIG.logoLight;
-$("#logo-dark").src=CONFIG.logoDark;
-$("#logo-foot").src=CONFIG.logoLight;
-$("#tarjetas").src=CONFIG.tarjetas;
+const setImage = (selector, src) => {
+  const el = $(selector);
+  if (el) el.src = src;
+};
+setImage("#logo-light", CONFIG.logoLight);
+setImage("#logo-dark", CONFIG.logoDark);
+setImage("#logo-foot", CONFIG.logoLight);
+setImage("#tarjetas", CONFIG.tarjetas);
 $("#foot-about").textContent=CONFIG.aboutCorto;
 $("#year").textContent=new Date().getFullYear();
 $("#years-experience").textContent=ANIOS_TRAYECTORIA;
@@ -612,26 +617,27 @@ quoteForm.addEventListener("submit",event=>{event.preventDefault();const data=ne
 /* productos */
 const grid=$("#prod-grid"),sub=$("#sub"),fprod=$("#foot-prod");
 const allProducts=MAGNOTEX_PRODUCTS.allProducts;
-const featuredProducts=MAGNOTEX_PRODUCTS.featuredProductNames
-  .map(name=>allProducts.find(product=>product.n===name))
+const featuredProducts=MAGNOTEX_PRODUCTS.featuredSlugs
+  .map(slug=>allProducts.find(product=>product.slug===slug))
   .filter(Boolean);
 const catalogProducts=allProducts;
 
 featuredProducts.forEach(p=>{
-  const a=document.createElement("a"); a.className="tile"; a.href="#contacto";
-  a.innerHTML=`<div class="img"><img loading="lazy" src="${p.img}" alt="${p.n}"></div>
-    <div class="cap"><h3>${p.n}</h3><em>Consultar</em></div>`;
+  const a=document.createElement("a"); a.className="tile"; a.href=p.href;
+  a.setAttribute("aria-label",`Ver información de ${p.n}`);
+  a.innerHTML=`<div class="img"><img loading="lazy" src="${p.img}" alt="${p.n}" width="${p.w}" height="${p.h}"></div>
+    <div class="cap"><h3>${p.n}</h3><em>Ver producto</em></div>`;
   grid.appendChild(a);
 });
 catalogProducts.forEach(p=>{
-  sub.insertAdjacentHTML("beforeend",`<li><a href="catalogo_magnotex.html">${p.n}</a></li>`);
-  fprod.insertAdjacentHTML("beforeend",`<li><a href="catalogo_magnotex.html">${p.n}</a></li>`);
+  sub.insertAdjacentHTML("beforeend",`<li><a href="${p.href}">${p.n}</a></li>`);
+  fprod.insertAdjacentHTML("beforeend",`<li><a href="${p.href}">${p.n}</a></li>`);
 });
 
 /* Marquee: logotipos duplicados para un desplazamiento continuo */
 const track=$("#track");
 const logoHTML=CONFIG.clientes.map(x=>{const[m,n]=x.split("/");
-  return `<img loading="lazy" src="assets/clientes/${m}/clientes-${n}.png" alt="Hotel cliente">`;}).join("");
+  return `<img loading="lazy" src="assets/clientes/${m}/clientes-${n}.png" alt="Hotel cliente" width="150" height="125">`;}).join("");
 track.innerHTML=logoHTML+logoHTML;
 
 /* header scroll */
@@ -639,7 +645,8 @@ const header=$("#header");
 addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>40));
 
 /* menú móvil */
-const burger=$("#burger"),nav=$("#nav"),productsToggle=$(".products-toggle"),productsMenu=productsToggle.closest(".has-sub");
+const burger=$("#burger"),nav=$("#nav"),productsToggle=document.querySelector(".products-toggle");
+const productsMenu=productsToggle.closest(".has-sub");
 const setProductsOpen=open=>{
   productsMenu.classList.toggle("open",open);
   productsToggle.setAttribute("aria-expanded",String(open));
@@ -655,18 +662,15 @@ nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
   setProductsOpen(false);
   if(innerWidth<=780) setMenuOpen(false);
 }));
-document.addEventListener("click",event=>{
-  if(!productsMenu.contains(event.target)) setProductsOpen(false);
-});
-document.addEventListener("keydown",event=>{
-  if(event.key!=="Escape") return;
-  if(productsMenu.classList.contains("open")){
-    setProductsOpen(false);
-    productsToggle.focus();
-  }else if(nav.classList.contains("open")){
-    setMenuOpen(false);
-    burger.focus();
-  }
+document.addEventListener("click",e=>{if(!productsMenu.contains(e.target)) setProductsOpen(false)});
+document.addEventListener("keydown",e=>{
+  if(e.key!=="Escape") return;
+  const hadProductsOpen=productsMenu.classList.contains("open");
+  const hadNavOpen=nav.classList.contains("open");
+  setProductsOpen(false);
+  setMenuOpen(false);
+  if(hadNavOpen) burger.focus();
+  else if(hadProductsOpen) productsToggle.focus();
 });
 addEventListener("resize",()=>{
   if(innerWidth>780&&nav.classList.contains("open")) setMenuOpen(false);

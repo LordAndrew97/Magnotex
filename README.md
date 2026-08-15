@@ -41,7 +41,7 @@ La dirección visual prioriza:
 
 - Fondos claros tipo lino, blanco roto y superficies limpias.
 - Tonos oscuros profundos para contraste y seriedad.
-- Acentos cálidos tipo latón o beige para reforzar una sensación premium.
+- Azul profundo y verde de marca para reforzar contraste, confianza e identidad.
 - Tipografía profesional, moderna y legible.
 - Imágenes relacionadas con cama, descanso, textiles y hotelería.
 - Composición ordenada, con jerarquía clara entre etiquetas, títulos, textos, tarjetas y botones.
@@ -65,7 +65,10 @@ Para revisar la web localmente:
 
 1. Abrir `index.html` directamente en el navegador.
 2. Revisar también `catalogo_magnotex.html` si se hacen cambios globales de estilo o navegación.
-3. Comprobar que las imágenes externas, logos, enlaces de contacto, redes sociales y mapa cargan correctamente.
+3. Abrir una muestra de las fichas de `productos/` y comprobar galerías, tablas y formularios.
+4. Comprobar que los logos, enlaces de contacto, redes sociales y mapa cargan correctamente.
+
+Las 14 fichas se generan desde `content/productos.json` mediante `scripts/build-product-pages.ps1`. La plantilla compartida está en `templates/producto.html` y los estilos en `assets/producto-detalle.css`.
 
 Si en el futuro se incorpora un entorno con bundler, framework o servidor local, documentar aquí los comandos reales de instalación, desarrollo, build y preview.
 
@@ -77,7 +80,7 @@ https://magnotex.humads.workers.dev/
 
 Antes de desplegar, revisar que el archivo HTML principal y las páginas complementarias estén actualizadas, que no haya archivos temporales y que los enlaces internos funcionen correctamente.
 
-No se documenta una tecnología de despliegue específica porque no está definida de forma explícita en el repositorio.
+El proyecto se publica como sitio estático mediante Cloudflare Workers. `wrangler.jsonc` sirve la raíz del repositorio y `.assetsignore` evita subir archivos de soporte y duplicados pesados que no utiliza la web.
 
 ## Revisión responsive recomendada
 
@@ -148,4 +151,3 @@ HUMA Digital Studio
 ## Estado del proyecto
 
 Proyecto web corporativo en mantenimiento activo. La versión actual está orientada a presencia comercial, captación de consultas y presentación de productos y soluciones para hotelería.
-Cloudflare build trigger
