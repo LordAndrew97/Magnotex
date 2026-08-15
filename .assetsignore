@@ -4,6 +4,8 @@ wrangler.jsonc
 .assetsignore
 .git
 .github
+.wrangler
+.gitignore
 content
 scripts
 templates
