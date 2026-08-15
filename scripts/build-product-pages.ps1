@@ -123,9 +123,9 @@ foreach ($product in $data.products) {
   if (-not $firstText) { $firstText = $product.name }
   $description = $firstText
   if ($description.Length -gt 155) { $description = $description.Substring(0,152).TrimEnd() + '...' }
-  $canonical = "https://magnotex.humads.workers.dev/productos/$($product.slug)"
+  $canonical = "https://magnotex.suncoast.workers.dev/productos/$($product.slug)"
   $ogFile = [System.IO.Path]::GetFileName((Get-LocalImagePath $product $product.images[0]))
-  $ogImage = "https://magnotex.humads.workers.dev/assets/productos/$($product.slug)/$ogFile"
+  $ogImage = "https://magnotex.suncoast.workers.dev/assets/productos/$($product.slug)/$ogFile"
 
   $html = $template
   $replacements = [ordered]@{
