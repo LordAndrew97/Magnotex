@@ -95,11 +95,25 @@
     panel.setAttribute("aria-modal", "false");
     panel.setAttribute("aria-labelledby", "analytics-consent-title");
     panel.innerHTML = [
-      '<h2 class="analytics-consent__title" id="analytics-consent-title">Tu privacidad</h2>',
-      '<p class="analytics-consent__text">Usamos Google Analytics para conocer el uso de la web y mejorarla. Solo se activará si aceptas.</p>',
+      '<div class="analytics-consent__visual" aria-hidden="true">',
+      '<svg class="analytics-consent__cookie" viewBox="0 0 96 96" focusable="false">',
+      '<defs><mask id="analytics-cookie-bites"><rect width="96" height="96" fill="#fff"/><circle cx="78" cy="18" r="11" fill="#000"/><circle cx="88" cy="37" r="10" fill="#000"/></mask></defs>',
+      '<g mask="url(#analytics-cookie-bites)">',
+      '<circle cx="48" cy="48" r="36" fill="#efbd72" stroke="#b97832" stroke-width="4"/>',
+      '<circle cx="34" cy="31" r="4" fill="#75411f"/><circle cx="57" cy="27" r="3.5" fill="#75411f"/>',
+      '<circle cx="65" cy="49" r="4" fill="#75411f"/><circle cx="42" cy="54" r="3.5" fill="#75411f"/>',
+      '<circle cx="57" cy="70" r="4" fill="#75411f"/><circle cx="28" cy="68" r="3" fill="#75411f"/>',
+      '</g>',
+      '<path d="M78 58v11M72.5 63.5h11M22 17v8M18 21h8" stroke="#4cc45c" stroke-width="3" stroke-linecap="round"/>',
+      '</svg>',
+      '</div>',
+      '<div class="analytics-consent__content">',
+      '<h2 class="analytics-consent__title" id="analytics-consent-title">Tu privacidad importa</h2>',
+      '<p class="analytics-consent__text">Usamos Google Analytics para conocer c&oacute;mo se utiliza la web y seguir mejor&aacute;ndola. Solo se activar&aacute; si aceptas.</p>',
       '<div class="analytics-consent__actions">',
       '<button class="analytics-consent__button analytics-consent__button--reject" type="button" data-consent="denied">Rechazar</button>',
-      '<button class="analytics-consent__button analytics-consent__button--accept" type="button" data-consent="granted">Aceptar analítica</button>',
+      '<button class="analytics-consent__button analytics-consent__button--accept" type="button" data-consent="granted">Aceptar anal&iacute;tica</button>',
+      '</div>',
       "</div>"
     ].join("");
 
