@@ -5,6 +5,7 @@ wrangler.jsonc
 .git
 .github
 .wrangler
+.codex-tools
 .gitignore
 content
 scripts

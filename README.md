@@ -6,9 +6,18 @@ Este proyecto corresponde a la web corporativa de Magnotex, empresa dedicada a o
 
 La web presenta la propuesta comercial de la marca, su experiencia en el mercado hotelero, sus principales líneas de producto, soluciones por tipo de cliente y canales de contacto.
 
-## URL publicada
+## URLs de publicación
 
-https://magnotex.humads.workers.dev/
+URL del Worker de Cloudflare:
+
+https://magnotex.suncoast.workers.dev/
+
+Dominios personalizados asociados al Worker:
+
+- https://edredonesmagnotex.ec/
+- https://www.edredonesmagnotex.ec/
+
+La URL `https://magnotex.humads.workers.dev/` es antigua y no debe utilizarse.
 
 ## Objetivo de la web
 
@@ -74,9 +83,14 @@ Si en el futuro se incorpora un entorno con bundler, framework o servidor local,
 
 ## Despliegue
 
-La URL publicada del proyecto es:
+La publicación se gestiona mediante el Worker `magnotex` de Cloudflare. La URL técnica del Worker es:
 
-https://magnotex.humads.workers.dev/
+https://magnotex.suncoast.workers.dev/
+
+Para uso comercial, deben comprobarse también los dominios personalizados:
+
+- https://edredonesmagnotex.ec/
+- https://www.edredonesmagnotex.ec/
 
 Antes de desplegar, revisar que el archivo HTML principal y las páginas complementarias estén actualizadas, que no haya archivos temporales y que los enlaces internos funcionen correctamente.
 
