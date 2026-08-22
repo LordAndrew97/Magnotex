@@ -131,7 +131,10 @@ foreach ($product in $data.products) {
     '@type' = 'Product'
     name = $product.name
     description = $description
-    image = @("https://magnotex.suncoast.workers.dev/assets/productos/$($product.slug)/$ogFile")
+    image = @($product.images | ForEach-Object {
+      $imageFile = [System.IO.Path]::GetFileName((Get-LocalImagePath $product $_))
+      "https://magnotex.suncoast.workers.dev/assets/productos/$($product.slug)/$imageFile"
+    })
     brand = [ordered]@{ '@type' = 'Brand'; name = $brandName }
     url = $canonical
   }
