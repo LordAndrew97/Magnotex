@@ -1,0 +1,11 @@
+{
+  "name": "Magnotex",
+  "short_name": "Magnotex",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1C5E",
+  "theme_color": "#0D1C5E",
+  "icons": [
+    {"src": "/assets/favicon-192.png", "sizes": "192x192", "type": "image/png"}
+  ]
+}

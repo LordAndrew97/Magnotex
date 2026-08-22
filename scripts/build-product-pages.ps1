@@ -126,6 +126,16 @@ foreach ($product in $data.products) {
   $canonical = "https://magnotex.suncoast.workers.dev/productos/$($product.slug)"
   $ogFile = [System.IO.Path]::GetFileName((Get-LocalImagePath $product $product.images[0]))
   $ogImage = "https://magnotex.suncoast.workers.dev/assets/productos/$($product.slug)/$ogFile"
+  $productSchema = [ordered]@{
+    '@context' = 'https://schema.org'
+    '@type' = 'Product'
+    name = $product.name
+    description = $description
+    image = @("https://magnotex.suncoast.workers.dev/assets/productos/$($product.slug)/$ogFile")
+    brand = [ordered]@{ '@type' = 'Brand'; name = $brandName }
+    url = $canonical
+  }
+  $structuredData = ($productSchema | ConvertTo-Json -Depth 8 -Compress)
 
   $html = $template
   $replacements = [ordered]@{
@@ -133,6 +143,7 @@ foreach ($product in $data.products) {
     '{{DESCRIPTION}}' = (Encode-Html $description)
     '{{CANONICAL}}' = (Encode-Html $canonical)
     '{{OG_IMAGE}}' = (Encode-Html $ogImage)
+    '{{STRUCTURED_DATA}}' = $structuredData
     '{{PRODUCT_NAME}}' = (Encode-Html $product.name)
     '{{HEADER_PRODUCTS}}' = $headerProducts
     '{{FOOTER_PRODUCTS}}' = $footerProducts

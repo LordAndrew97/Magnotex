@@ -383,7 +383,7 @@
     {
       "slug": "salidas-de-bano",
       "name": "Salidas de baño",
-      "cardImage": "assets/producto-salidas-bano.jpg",
+      "cardImage": "assets/producto-salidas-bano.png",
       "blocks": [
         {
           "type": "paragraph",
@@ -500,7 +500,7 @@
     {
       "slug": "alfombras-de-bano",
       "name": "Alfombras de baño",
-      "cardImage": "assets/producto-alfombra-bano.jpg",
+      "cardImage": "assets/producto-alfombra-bano.png",
       "blocks": [
         {
           "type": "paragraph",
@@ -513,7 +513,9 @@
           "rows": [
             ["Recuadro", "0,60", "0,50"],
             ["Ribeteada (doble capa)", "0,40", "0,50"],
-            ["Piecito", "0,60", "0,50"]
+            ["Piecito", "0,60", "0,50"],
+            ["Greca", "0,60", "0,50"],
+            ["Trenzado", "0,60", "0,50"]
           ]
         },
         {
@@ -524,7 +526,9 @@
       "images": [
         "assets/productos/alfombras-de-bano/alfombra-de-bano-01.jpg",
         "assets/productos/alfombras-de-bano/alfombra-de-bano-02.jpg",
-        "assets/productos/alfombras-de-bano/alfombra-de-bano-03.jpg"
+        "assets/productos/alfombras-de-bano/alfombra-de-bano-03.jpg",
+        "assets/productos/alfombras-de-bano/alfombra-de-bano-04.jpg",
+        "assets/productos/alfombras-de-bano/alfombra-de-bano-05.jpg"
       ]
     }
   ]
