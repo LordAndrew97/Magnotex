@@ -12,17 +12,19 @@
 <meta property="og:title" content="Magnotex | Proveedor hotelero">
 <meta property="og:description" content="Confort, calidad y excelentes acabados para hoteles, alojamientos y hogares.">
 <meta property="og:url" content="https://magnotex.suncoast.workers.dev/">
-<meta property="og:image" content="https://magnotex.suncoast.workers.dev/assets/magnotex_cama_1200x737.png">
+<meta property="og:image" content="https://magnotex.suncoast.workers.dev/assets/magnotex_cama_1200x737.jpg">
 <meta property="og:image:alt" content="Productos Magnotex para el descanso">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Magnotex | Proveedor hotelero">
 <meta name="twitter:description" content="Confort, calidad y excelentes acabados para hoteles, alojamientos y hogares.">
-<meta name="twitter:image" content="https://magnotex.suncoast.workers.dev/assets/magnotex_cama_1200x737.png">
+<meta name="twitter:image" content="https://magnotex.suncoast.workers.dev/assets/magnotex_cama_1200x737.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="manifest" href="assets/site.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
-<link rel="stylesheet" href="assets/cookie-consent.css">
+<link rel="preload" href="assets/Portada.jpg" as="image" fetchpriority="high">
+<link rel="preload" href="assets/cookie-consent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/cookie-consent.css"></noscript>
 <script src="assets/cookie-consent.js" data-ga-measurement-id="G-RVJ4WCTKEP" data-privacy-policy-href="politica-de-privacidad.html" data-cookie-policy-href="politica-de-cookies.html" defer></script>
 <script src="assets/analytics-events.js" defer></script>
 <script type="application/ld+json">{
@@ -30,7 +32,7 @@
   "@type":"Organization",
   "name":"Magnotex",
   "url":"https://magnotex.suncoast.workers.dev/",
-  "logo":"https://magnotex.suncoast.workers.dev/assets/Magnotex.png",
+  "logo":"https://magnotex.suncoast.workers.dev/assets/Magnotex-450.png",
   "email":"magnotex_ventas@hotmail.com",
   "telephone":"+593991570939",
   "sameAs":["https://www.instagram.com/magnotex/","https://www.facebook.com/www.edredonesmagnotex.ec"]
@@ -138,6 +140,7 @@ header.scrolled .burger span{background:var(--ink)}
   color:#79DE86;font-weight:400;display:block;margin:auto 0 24px}
 .hero p{color:#E7EEF8;font-size:1.1rem;line-height:1.75;max-width:580px;margin-bottom:36px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.quote-form .eyebrow{color:var(--brass)}
 /* ===================== INTRO + CIFRAS ===================== */
 .intro{background:var(--cloud)}
 .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
@@ -255,7 +258,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
 .foot{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:48px}
 .foot .flogo{width:150px;max-width:100%;height:auto;margin-bottom:20px}
 .foot p{font-size:.92rem;color:#9199BC;line-height:1.75;max-width:330px}
-.foot h4{color:#fff;font-family:inherit;font-weight:700;font-size:1rem;margin-bottom:18px}
+ .foot h4,.foot h2{color:#fff;font-family:inherit;font-weight:700;font-size:1rem;margin-bottom:18px}
 .flist{list-style:none;columns:2;column-gap:18px}
 .flist li{margin-bottom:9px;font-size:.9rem}
 .flist a:hover{color:var(--brass)}
@@ -279,7 +282,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
 /* ===================== WHATSAPP ===================== */
 .wa{position:fixed;right:24px;bottom:24px;z-index:80;width:58px;height:58px;border-radius:50%;
   background:#25d366;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 10px 30px rgba(37,211,102,.4);transition:.25s}
+  box-shadow:0 10px 30px rgba(37,211,102,.4);transition:transform .25s ease}
 .wa:hover{transform:scale(1.08)}
 .wa svg{width:30px;height:30px;fill:#fff}
 
@@ -341,7 +344,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
   <div class="wrap hbar">
     <a class="brand" href="#inicio">
       <img class="light" id="logo-light" src="assets/Magnotex-blanco.png" alt="Magnotex" width="480" height="179">
-      <img class="dark" id="logo-dark" src="assets/Magnotex.png" alt="Magnotex" width="818" height="305">
+      <img class="dark" id="logo-dark" src="assets/Magnotex-450.png" alt="Magnotex" width="450" height="168">
     </a>
     <button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <ul class="nav" id="nav">
@@ -404,7 +407,7 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
 <section class="about sec" id="nosotros">
   <div class="wrap about-grid">
     <div class="about-img reveal">
-      <img src="assets/magnotex_cama_1200x737.png" alt="Productos Magnotex para el descanso" width="1200" height="737">
+      <img src="assets/magnotex_cama_1200x737.jpg" alt="Productos Magnotex para el descanso" width="1200" height="737" loading="lazy" decoding="async">
     </div>
     <div class="reveal">
       <span class="eyebrow">Magnotex</span>
@@ -528,17 +531,17 @@ footer{background:#0A1547;color:#A3ACCB;padding:78px 0 0}
   <div class="wrap">
     <div class="foot">
       <div>
-        <img class="flogo" id="logo-foot" src="assets/Magnotex-blanco.png" alt="Magnotex" width="480" height="179">
+        <img class="flogo" id="logo-foot" src="assets/Magnotex-blanco.png" alt="Magnotex" width="480" height="179" loading="lazy" decoding="async">
         <p id="foot-about"></p>
         <div class="pay"><span style="color:var(--brass);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase">Aceptamos todas las tarjetas</span>
-          <img id="tarjetas" src="assets/tarjetas-de-credito.png" alt="Tarjetas de crédito y débito" width="1920" height="195"></div>
+          <img id="tarjetas" src="assets/tarjetas-de-credito.png" alt="Tarjetas de crédito y débito" width="1920" height="195" loading="lazy" decoding="async"></div>
       </div>
       <div>
-        <h4>Productos</h4>
+        <h2>Productos</h2>
         <ul class="flist" id="foot-prod"></ul>
       </div>
       <div class="fc">
-        <h4>Contáctanos</h4>
+        <h2>Contáctanos</h2>
         <div><span>Oficina</span><a id="f-of" href="tel:023805794">(02) 3805 794</a></div>
         <div><span>Celulares</span><span class="v" id="f-cel"></span></div>
         <div><span>Correo</span><a id="f-mail" href="mailto:magnotex_ventas@hotmail.com">magnotex_ventas@hotmail.com</a></div>
@@ -585,7 +588,7 @@ const ANIOS_TRAYECTORIA = 26;
 
 const CONFIG={
   logoLight: "assets/Magnotex-blanco.png",  /* sobre fondos oscuros */
-  logoDark:  "assets/Magnotex.png",          /* sobre fondos claros  */
+  logoDark:  "assets/Magnotex-450.png",      /* sobre fondos claros  */
   tarjetas:  "assets/tarjetas-de-credito.png",
 
   aboutCorto:`Soluciones textiles con ${ANIOS_TRAYECTORIA} años de experiencia, calidad y fabricación especializada.`,
